@@ -1,0 +1,73 @@
+/* classes used to brand (logos, colors, etc) common pages, welcome app, sso, etc. */
+
+.obrand_loginPageLogo {
+    background-image: url(images/ovirt_logo.png);
+    width: 80px;
+    height: 30px;
+    border: 0px;
+    display: block;
+}
+
+.obrand_loginPageLogoLink {
+    display: block;
+    float: right;
+    margin-right: 64px;
+    margin-top: 75px;
+    margin-bottom: 70px;
+    position: relative;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .obrand_loginPageLogo {
+        display: none;
+    }
+    .obrand_loginPageLogoLink {
+        display: none;
+    }
+}
+
+.obrand_middleLogoName {
+    background-image: url(images/ovirt_middle_logo.png);
+    width: 440px;
+    height: 35px;
+    border: 0px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    clear: left;
+}
+
+.obrand_ssoHeader {
+    height: 41px;
+    position: relative;
+    top: 4px;
+    background-color: #121212;
+}
+
+.obrand_main_tab {
+    height: calc(100vh - 66px);
+    min-height: calc(100vh - 66px);
+}
+
+.obrand_landingBgTop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(images/ovirt_landing_bg_top_right.png);
+    width: 561px;
+    height: 413px;
+    background-repeat: no-repeat;
+}
+
+.obrand_landingBgBottom {
+    background-image: url(images/ovirt_landing_bg_bottom_left.png);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 4px solid #00659c;
+    background-repeat: no-repeat;
+}
