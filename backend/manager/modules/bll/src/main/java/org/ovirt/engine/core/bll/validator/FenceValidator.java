@@ -2,8 +2,11 @@ package org.ovirt.engine.core.bll.validator;
 
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Pattern;
 
-import org.ovirt.engine.core.bll.Backend;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import org.ovirt.engine.core.bll.interfaces.BackendInternal;
 import org.ovirt.engine.core.bll.pm.FenceProxyLocator;
 import org.ovirt.engine.core.common.businessentities.Cluster;
@@ -12,11 +15,15 @@ import org.ovirt.engine.core.common.businessentities.pm.FenceAgent;
 import org.ovirt.engine.core.common.config.Config;
 import org.ovirt.engine.core.common.config.ConfigValues;
 import org.ovirt.engine.core.common.errors.EngineMessage;
-import org.ovirt.engine.core.compat.Regex;
-import org.ovirt.engine.core.dal.dbbroker.DbFacade;
+import org.ovirt.engine.core.dao.FenceAgentDao;
 import org.ovirt.engine.core.utils.pm.FenceConfigHelper;
 
+@Singleton
 public class FenceValidator {
+    @Inject
+    private BackendInternal backend;
+    @Inject
+    private FenceAgentDao fenceAgentDao;
 
     public boolean isProxyHostAvailable(VDS vds, List<String> messages) {
         FenceProxyLocator proxyHostLocator = getProxyLocator(vds);
@@ -31,8 +38,7 @@ public class FenceValidator {
     public boolean isStartupTimeoutPassed() {
         // check if we are in the interval of X seconds from startup
         // if yes , system is still initializing , ignore fence operations
-        Date waitTo =
-                getBackend().getStartedAt().addSeconds(Config.getValue(ConfigValues.DisableFenceAtStartupInSec));
+        Date waitTo = backend.getStartedAt().addSeconds(Config.getValue(ConfigValues.DisableFenceAtStartupInSec));
         Date now = new Date();
         return waitTo.before(now) || waitTo.equals(now);
     }
@@ -47,8 +53,7 @@ public class FenceValidator {
 
     public boolean isPowerManagementEnabledAndLegal(VDS vds, Cluster cluster, List<String> messages) {
         if (!(vds.isPmEnabled()
-                && isPowerManagementLegal(
-                        getDbFacade().getFenceAgentDao().getFenceAgentsForHost(vds.getId()), cluster, messages))) {
+                && isPowerManagementLegal(fenceAgentDao.getFenceAgentsForHost(vds.getId()), cluster, messages))) {
             messages.add(EngineMessage.VDS_FENCE_DISABLED.name());
             return false;
         } else {
@@ -89,8 +94,10 @@ public class FenceValidator {
     public boolean isFenceAgentVersionCompatible(FenceAgent agent,
             String clusterCompatibilityVersion,
             List<String> messages) {
-        if (!Regex.isMatch(FenceConfigHelper.getFenceConfigurationValue(ConfigValues.VdsFenceType.name(),
-                clusterCompatibilityVersion), String.format("(,|^)%1$s(,|$)", agent.getType()))) {
+        if (!Pattern.compile(String.format("(,|^)%1$s(,|$)", agent.getType())).matcher(
+                FenceConfigHelper.getFenceConfigurationValue(ConfigValues.VdsFenceType.name(),
+                        clusterCompatibilityVersion)
+                ).find()) {
             messages.add(EngineMessage.ACTION_TYPE_FAILED_AGENT_NOT_SUPPORTED.name());
             return false;
         } else {
@@ -100,14 +107,5 @@ public class FenceValidator {
 
     protected FenceProxyLocator getProxyLocator(VDS vds) {
         return new FenceProxyLocator(vds);
-    }
-
-    protected BackendInternal getBackend() {
-        return Backend.getInstance();
-    }
-
-    // TODO Investigate if injection is possible
-    protected DbFacade getDbFacade() {
-        return DbFacade.getInstance();
     }
 }
