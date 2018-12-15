@@ -24,7 +24,6 @@ import org.ovirt.engine.core.common.action.ActionType;
 import org.ovirt.engine.core.common.action.StoragePoolManagementParameter;
 import org.ovirt.engine.core.common.action.SyncLunsParameters;
 import org.ovirt.engine.core.common.businessentities.Cluster;
-import org.ovirt.engine.core.common.businessentities.StorageDomain;
 import org.ovirt.engine.core.common.businessentities.StorageDomainStatic;
 import org.ovirt.engine.core.common.businessentities.StorageDomainType;
 import org.ovirt.engine.core.common.businessentities.StorageFormatType;
@@ -47,7 +46,6 @@ import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogDirector;
 import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogable;
 import org.ovirt.engine.core.dao.ClusterDao;
 import org.ovirt.engine.core.dao.DiskLunMapDao;
-import org.ovirt.engine.core.dao.StorageDomainDao;
 import org.ovirt.engine.core.dao.StorageDomainStaticDao;
 import org.ovirt.engine.core.dao.StoragePoolDao;
 import org.ovirt.engine.core.dao.VdsDao;
@@ -77,8 +75,6 @@ public class UpdateStoragePoolCommand<T extends StoragePoolManagementParameter> 
     @Inject
     private ClusterDao clusterDao;
     @Inject
-    private StorageDomainDao storageDomainDao;
-    @Inject
     private StorageDomainStaticDao storageDomainStaticDao;
     @Inject
     private VdsDao vdsDao;
@@ -99,7 +95,6 @@ public class UpdateStoragePoolCommand<T extends StoragePoolManagementParameter> 
     }
 
     private StoragePool oldStoragePool;
-    private StorageDomain masterDomainForPool;
 
     @Override
     protected void executeCommand() {
@@ -355,10 +350,10 @@ public class UpdateStoragePoolCommand<T extends StoragePoolManagementParameter> 
 
     private boolean manageCompatibilityVersionChangeCheckResult(List<String> formatProblematicDomains) {
         if (!formatProblematicDomains.isEmpty()) {
-            addValidationMessage(EngineMessage.ACTION_TYPE_FAILED_DECREASING_COMPATIBILITY_VERSION_CAUSES_STORAGE_FORMAT_DOWNGRADING);
-            getReturnValue().getValidationMessages().addAll(ReplacementUtils.replaceWith("formatDowngradedDomains", formatProblematicDomains, "," , formatProblematicDomains.size()));
+            return failValidation(EngineMessage.ACTION_TYPE_FAILED_DECREASING_COMPATIBILITY_VERSION_CAUSES_STORAGE_FORMAT_DOWNGRADING,
+                    ReplacementUtils.replaceWith("formatDowngradedDomains", formatProblematicDomains, "," , formatProblematicDomains.size()));
         }
-        return formatProblematicDomains.isEmpty();
+        return true;
     }
 
     protected StorageDomainToPoolRelationValidator getAttachDomainValidator(StorageDomainStatic domainStatic) {
@@ -366,34 +361,18 @@ public class UpdateStoragePoolCommand<T extends StoragePoolManagementParameter> 
     }
 
     protected boolean checkAllClustersLevel() {
-        boolean returnValue = true;
         List<Cluster> clusters = clusterDao.getAllForStoragePool(getStoragePool().getId());
-        List<String> lowLevelClusters = new ArrayList<>();
-        for (Cluster cluster : clusters) {
-            if (getStoragePool().getCompatibilityVersion().compareTo(cluster.getCompatibilityVersion()) > 0) {
-                lowLevelClusters.add(cluster.getName());
-            }
-        }
-        if (!lowLevelClusters.isEmpty()) {
-            returnValue = false;
-            getReturnValue().getValidationMessages().add(String.format("$ClustersList %1$s",
-                    StringUtils.join(lowLevelClusters, ",")));
-            getReturnValue()
-                    .getValidationMessages()
-                    .add(EngineMessage.ERROR_CANNOT_UPDATE_STORAGE_POOL_COMPATIBILITY_VERSION_BIGGER_THAN_CLUSTERS
-                            .toString());
-        }
-        return returnValue;
-    }
+        String lowLevelClusters = clusters.stream()
+                .filter(c -> getStoragePool().getCompatibilityVersion().compareTo(c.getCompatibilityVersion()) > 0)
+                .map(Cluster::getName)
+                .collect(Collectors.joining(","));
 
-    private StorageDomain getMasterDomain() {
-        if (masterDomainForPool == null) {
-            Guid masterId = storageDomainDao.getMasterStorageDomainIdForPool(getStoragePoolId());
-            if (Guid.Empty.equals(masterId)) {
-                masterDomainForPool = storageDomainDao.get(masterId);
-            }
+        if (!lowLevelClusters.isEmpty()) {
+            return failValidation(
+                    EngineMessage.ERROR_CANNOT_UPDATE_STORAGE_POOL_COMPATIBILITY_VERSION_BIGGER_THAN_CLUSTERS,
+                    String.format("$ClustersList %1$s", lowLevelClusters));
         }
-        return masterDomainForPool;
+        return true;
     }
 
     protected NetworkValidator getNetworkValidator(Network network) {
