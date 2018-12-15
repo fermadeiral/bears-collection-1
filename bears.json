@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 304679516,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/304679516",
+      "date": "Nov 20, 2017 12:25:23 PM"
+    },
+    "fixerBuild": {
+      "id": 304711191,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/304711191",
+      "date": "Nov 20, 2017 1:54:33 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 3:05:39 PM",
+    "reproductionDateEnd": "Dec 15, 2018 3:34:23 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2308520008,
+      "totalMemory": 2995781632
+    },
+    "totalDuration": 1714,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 160,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          160
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 758,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          4,
+          0,
+          2,
+          747
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 92,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          92
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/304679516/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 3,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 0,
+      "numberDeleted": 49
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/304679516/backend/manager/modules/dal",
+    "overallMetrics": {
+      "numberRunning": 1266,
+      "numberPassing": 1265,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 2,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogMessagesTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogMessagesTest",
+        "testMethod": "testRedundantMessages",
+        "failureName": "java.lang.AssertionError",
+        "detail": "Check for redundant keys in /root/workspace/oVirt/ovirt-engine/304679516/backend/manager/modules/dal/src/main/resources/bundles/AuditLogMessages.properties failed: No translation for key [VDS_ANSIBLE_HOST_REMOVE_STARTED] in class org.ovirt.engine.core.common.AuditLogType",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7810,
+    "numberTestFiles": 1265,
+    "numberLibrariesFailingModule": 173,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "f44f179fab05fdd35ca1b9d3ab2494e0ca278562",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/f44f179fab05fdd35ca1b9d3ab2494e0ca278562",
+      "date": "Nov 20, 2017 12:02:05 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "372e848985313523fbfbf096f05f08dc3874278a",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/372e848985313523fbfbf096f05f08dc3874278a",
+      "date": "Nov 20, 2017 1:27:16 PM"
+    }
+  }
+}
