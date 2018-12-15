@@ -37,7 +37,9 @@ import org.ovirt.engine.core.common.queries.VdcQueryReturnValue;
 import org.ovirt.engine.core.common.queries.VdcQueryType;
 import org.ovirt.engine.core.common.utils.Pair;
 import org.ovirt.engine.core.compat.Guid;
-import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogableBase;
+import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogDirector;
+import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogable;
+import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogableImpl;
 import org.ovirt.engine.core.dao.DiskDao;
 import org.ovirt.engine.core.dao.ImageDao;
 import org.ovirt.engine.core.dao.UnregisteredDisksDao;
@@ -47,6 +49,9 @@ import org.ovirt.engine.core.utils.transaction.TransactionSupport;
 public class RegisterDiskCommand <T extends RegisterDiskParameters> extends BaseImagesCommand<T> implements QuotaStorageDependent {
 
     private static final String DEFAULT_REGISTRATION_FORMAT = "RegisteredDisk_%1$tY-%1$tm-%1$td_%1$tH-%1$tM-%1$tS";
+
+    @Inject
+    private AuditLogDirector auditLogDirector;
 
     @Inject
     private DiskProfileHelper diskProfileHelper;
@@ -153,7 +158,7 @@ public class RegisterDiskCommand <T extends RegisterDiskParameters> extends Base
     }
 
     private void addRegisterInitatedAuditLog() {
-        AuditLogableBase logable = new AuditLogableBase();
+        AuditLogable logable = new AuditLogableImpl();
         logable.addCustomValue("DiskAlias", getDiskImage().getDiskAlias());
         auditLogDirector.log(logable, AuditLogType.USER_REGISTER_DISK_INITIATED);
     }

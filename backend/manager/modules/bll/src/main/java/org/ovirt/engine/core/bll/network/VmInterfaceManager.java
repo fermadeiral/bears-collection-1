@@ -22,11 +22,13 @@ import org.ovirt.engine.core.compat.Guid;
 import org.ovirt.engine.core.compat.Version;
 import org.ovirt.engine.core.dal.dbbroker.DbFacade;
 import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogDirector;
-import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogableBase;
+import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogable;
+import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogableImpl;
 import org.ovirt.engine.core.dao.VmDao;
 import org.ovirt.engine.core.dao.network.VmNetworkInterfaceDao;
 import org.ovirt.engine.core.dao.network.VmNetworkStatisticsDao;
 import org.ovirt.engine.core.dao.network.VmNicDao;
+import org.ovirt.engine.core.di.Injector;
 import org.ovirt.engine.core.utils.transaction.TransactionSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -99,7 +101,7 @@ public class VmInterfaceManager {
 
     public void auditLogMacInUse(final VmNic iface) {
         TransactionSupport.executeInNewTransaction(() -> {
-            AuditLogableBase logable = createAuditLog(iface);
+            AuditLogable logable = createAuditLog(iface);
             log(logable, AuditLogType.MAC_ADDRESS_IS_IN_USE);
             log.warn("Network Interface '{}' has MAC address '{}' which is in use, " +
                     "therefore the action for VM '{}' failed.", iface.getName(), iface.getMacAddress(),
@@ -110,8 +112,8 @@ public class VmInterfaceManager {
 
     public void auditLogMacInUseUnplug(final VmNic iface, String vmName) {
         TransactionSupport.executeInNewTransaction(() -> {
-            AuditLogableBase logable = createAuditLog(iface);
-            logable.addCustomValue("VmName", vmName);
+            AuditLogable logable = createAuditLog(iface);
+            logable.setVmName(vmName);
             log(logable, AuditLogType.MAC_ADDRESS_IS_IN_USE_UNPLUG);
             log.warn("Network Interface '{}' has MAC address '{}' which is in use, " +
                     "therefore it is being unplugged from VM '{}'.", iface.getName(), iface.getMacAddress(),
@@ -215,12 +217,12 @@ public class VmInterfaceManager {
     /**
      * Log the given loggable & message to the {@link AuditLogDirector}.
      */
-    private void log(AuditLogableBase logable, AuditLogType auditLogType) {
+    private void log(AuditLogable logable, AuditLogType auditLogType) {
         getAuditLogDirector().log(logable, auditLogType);
     }
 
     AuditLogDirector getAuditLogDirector() {
-        return new AuditLogDirector();
+        return Injector.get(AuditLogDirector.class);
     }
 
     protected VmNetworkStatisticsDao getVmNetworkStatisticsDao() {
@@ -239,10 +241,11 @@ public class VmInterfaceManager {
         return DbFacade.getInstance().getVmDao();
     }
 
-    private AuditLogableBase createAuditLog(final VmNic iface) {
-        AuditLogableBase logable = new AuditLogableBase();
+    private AuditLogable createAuditLog(final VmNic iface) {
+        AuditLogable logable = new AuditLogableImpl();
         logable.addCustomValue("MACAddr", iface.getMacAddress());
         logable.addCustomValue("IfaceName", iface.getName());
+        logable.setVmId(iface.getVmId());
         return logable;
     }
 }
