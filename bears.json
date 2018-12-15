@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 239334345,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/239334345",
+      "date": "Jun 4, 2017 6:42:06 PM"
+    },
+    "fixerBuild": {
+      "id": 239382461,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/239382461",
+      "date": "Jun 4, 2017 10:33:07 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 11:24:49 PM",
+    "reproductionDateEnd": "Dec 15, 2018 11:46:37 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1406161648,
+      "totalMemory": 2521825280
+    },
+    "totalDuration": 1300,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 136,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          136
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 496,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          2,
+          0,
+          1,
+          488
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 165,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          165
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/239334345/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 3,
+      "numberDeleted": 3
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/239334345/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 5051,
+      "numberPassing": 5050,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.RunVmCommandTest",
+        "numberRunning": 31,
+        "numberPassing": 30,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.RunVmCommandTest",
+        "testMethod": "auditLogRunStatelessVmCreateImages",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003cUSER_INITIATED_RUN_VM\u003e but was:\u003cUSER_STARTED_VM\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7794,
+    "numberTestFiles": 1244,
+    "numberLibrariesFailingModule": 189,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "43a03b71af97a995ec467347afbd554ca41a9689",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/43a03b71af97a995ec467347afbd554ca41a9689",
+      "date": "Jun 4, 2017 5:23:47 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "24e53f59912ba745ca7403057b0ba2aceb5d887b",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/24e53f59912ba745ca7403057b0ba2aceb5d887b",
+      "date": "Jun 4, 2017 10:09:06 PM"
+    }
+  },
+  "type": "passing_passing"
+}
