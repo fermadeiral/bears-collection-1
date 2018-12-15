@@ -1,0 +1,158 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 269969450,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/269969450",
+      "date": "Aug 30, 2017 2:48:31 PM"
+    },
+    "fixerBuild": {
+      "id": 269981551,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/269981551",
+      "date": "Aug 30, 2017 3:17:57 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 8:37:54 PM",
+    "reproductionDateEnd": "Dec 15, 2018 9:04:02 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 883098936,
+      "totalMemory": 2406481920
+    },
+    "totalDuration": 1558,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 135,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          135
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 570,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          2,
+          0,
+          1,
+          564
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 202,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          202
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/269969450/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 3,
+      "numberDeleted": 1
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/269969450/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4819,
+      "numberPassing": 4817,
+      "numberFailing": 0,
+      "numberErroring": 2,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.ClassCastException",
+          "isError": true,
+          "occurrences": 2
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.RunVmCommandTest",
+        "numberRunning": 36,
+        "numberPassing": 34,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.RunVmCommandTest",
+        "testMethod": "testSuccessWithExternalLunDisk",
+        "failureName": "java.lang.ClassCastException",
+        "detail": "org.ovirt.engine.core.common.businessentities.storage.LunDisk cannot be cast to org.ovirt.engine.core.common.businessentities.storage.DiskImage",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.RunVmCommandTest",
+        "testMethod": "testFailureWithExternalLunDiskAndImageOnBackup",
+        "failureName": "java.lang.ClassCastException",
+        "detail": "org.ovirt.engine.core.common.businessentities.storage.LunDisk cannot be cast to org.ovirt.engine.core.common.businessentities.storage.DiskImage",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7751,
+    "numberTestFiles": 1248,
+    "numberLibrariesFailingModule": 197,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "8006cc802d837a3b059875aebaa781f63f8122d1",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/8006cc802d837a3b059875aebaa781f63f8122d1",
+      "date": "Aug 30, 2017 2:24:05 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "22d82e65ba1392292e7de0cb216a0420cd64b367",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/22d82e65ba1392292e7de0cb216a0420cd64b367",
+      "date": "Aug 30, 2017 2:58:15 PM"
+    }
+  }
+}
