@@ -1,0 +1,186 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 304313519,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/304313519",
+      "date": "Nov 19, 2017 3:17:41 PM"
+    },
+    "fixerBuild": {
+      "id": 304651124,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/304651124",
+      "date": "Nov 20, 2017 11:13:24 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 3:05:38 PM",
+    "reproductionDateEnd": "Dec 15, 2018 3:36:45 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1414245680,
+      "totalMemory": 2218786816
+    },
+    "totalDuration": 1858,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 176,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          176
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 739,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          10,
+          3,
+          0,
+          2,
+          724
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 218,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          218
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/304313519/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 2,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 3,
+      "numberDeleted": 2
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/304313519/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4886,
+      "numberPassing": 4880,
+      "numberFailing": 6,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "isError": false,
+          "occurrences": 6
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ansible.AnsibleCommandBuilderTest",
+        "numberRunning": 6,
+        "numberPassing": 0,
+        "numberFailing": 6,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ansible.AnsibleCommandBuilderTest",
+        "testMethod": "testInventoryFile",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c.../share/ovirt-engine/[]playbooks/myplaybook...\u003e but was:\u003c.../share/ovirt-engine/[../ovirt-ansible-roles/]playbooks/myplaybook...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ansible.AnsibleCommandBuilderTest",
+        "testMethod": "testDisableVerboseMode",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c.../share/ovirt-engine/[]playbooks/myplaybook...\u003e but was:\u003c.../share/ovirt-engine/[../ovirt-ansible-roles/]playbooks/myplaybook...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ansible.AnsibleCommandBuilderTest",
+        "testMethod": "testComplexCommand",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c.../share/ovirt-engine/[]playbooks/myplaybook...\u003e but was:\u003c.../share/ovirt-engine/[../ovirt-ansible-roles/]playbooks/myplaybook...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ansible.AnsibleCommandBuilderTest",
+        "testMethod": "testExtraVariables",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c.../share/ovirt-engine/[]playbooks/myplaybook...\u003e but was:\u003c.../share/ovirt-engine/[../ovirt-ansible-roles/]playbooks/myplaybook...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ansible.AnsibleCommandBuilderTest",
+        "testMethod": "testDifferentVerbosity",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c.../share/ovirt-engine/[]playbooks/myplaybook...\u003e but was:\u003c.../share/ovirt-engine/[../ovirt-ansible-roles/]playbooks/myplaybook...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ansible.AnsibleCommandBuilderTest",
+        "testMethod": "testAllEmpty",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c.../share/ovirt-engine/[]playbooks/myplaybook...\u003e but was:\u003c.../share/ovirt-engine/[../ovirt-ansible-roles/]playbooks/myplaybook...\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7810,
+    "numberTestFiles": 1265,
+    "numberLibrariesFailingModule": 197,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "6d448d331be09398242f65efe521a619d1450fcf",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/6d448d331be09398242f65efe521a619d1450fcf",
+      "date": "Nov 19, 2017 2:55:44 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "95a479f36a0f087821103e969850f90036d7067f",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/95a479f36a0f087821103e969850f90036d7067f",
+      "date": "Nov 20, 2017 10:48:35 AM"
+    }
+  }
+}
