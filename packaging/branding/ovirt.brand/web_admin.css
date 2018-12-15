@@ -1,0 +1,36 @@
+/* HeaderView.ui.xml:
+logo used in the application header */
+.obrand_headerLogoImage {
+    background-image: url(images/ovirt_header_logo.png);
+    width: 272px;
+    height: 16px;
+    position: relative;
+    top: 6px;
+    border: 0px;
+    display: inline !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* background of application header */
+.obrand_headerLogoBackgroundImage {
+    background-image: url(images/oVirt_Banner_solid.png);
+    background-size: cover;
+}
+
+.obrand_menuBar {
+    float: right;
+    padding: 10px 10px 10px 10px;
+}
+
+/* GuidePopupView.ui.xml:
+This class allows you to change the error icon on the guide popup window. */
+.obrand_dialogLogoGuideImage {
+    background: url(images/dialog/guide.png);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 27px;
+    position: relative;
+    left: -7px;
+    border: 0px;
+}
