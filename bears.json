@@ -1,0 +1,170 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 271590361,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/271590361",
+      "date": "Sep 4, 2017 10:24:58 AM"
+    },
+    "fixerBuild": {
+      "id": 271641150,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/271641150",
+      "date": "Sep 4, 2017 1:25:03 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 8:09:22 PM",
+    "reproductionDateEnd": "Dec 15, 2018 8:37:08 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2196504008,
+      "totalMemory": 2712666112
+    },
+    "totalDuration": 1656,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 135,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          135
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 568,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          0,
+          1,
+          561
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 289,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          289
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/271590361/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 10,
+      "numberDeleted": 9
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/271590361/backend/manager/modules/restapi/jaxrs",
+    "overallMetrics": {
+      "numberRunning": 6846,
+      "numberPassing": 6843,
+      "numberFailing": 2,
+      "numberErroring": 1,
+      "numberSkipping": 71,
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.WebApplicationException",
+          "isError": true,
+          "occurrences": 1
+        },
+        {
+          "failureName": "Wanted but not invoked",
+          "isError": false,
+          "occurrences": 2
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendStorageDomainResourceTest",
+        "numberRunning": 20,
+        "numberPassing": 17,
+        "numberFailing": 2,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendStorageDomainResourceTest",
+        "testMethod": "testRemoveWithDestroy",
+        "failureName": "Wanted but not invoked",
+        "detail": " Wanted but not invoked: backend.runQuery(     GetStorageDomainById,     \u003cParameters equals\u003e ); -\u003e at org.ovirt.engine.api.restapi.resource.AbstractBackendBaseTest.lambda$setUpGetEntityExpectations$0(AbstractBackendBaseTest.java:264) Actually, there were zero interactions with this mock. ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendStorageDomainResourceTest",
+        "testMethod": "testRemoveWithDestroy",
+        "failureName": "javax.ws.rs.WebApplicationException",
+        "detail": "HTTP 400 Bad Request",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendStorageDomainResourceTest",
+        "testMethod": "testRemoveStorageDomainNull",
+        "failureName": "Wanted but not invoked",
+        "detail": " Wanted but not invoked: backend.runQuery(     GetStorageDomainById,     \u003cParameters equals\u003e ); -\u003e at org.ovirt.engine.api.restapi.resource.AbstractBackendBaseTest.lambda$setUpGetEntityExpectations$0(AbstractBackendBaseTest.java:264) Actually, there were zero interactions with this mock. ",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7755,
+    "numberTestFiles": 1248,
+    "numberLibrariesFailingModule": 194,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "df591e4289a4dba2ee338f62a4d08c6df15aca52",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/df591e4289a4dba2ee338f62a4d08c6df15aca52",
+      "date": "Sep 4, 2017 10:00:41 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "836a1454399f8a34b2087c9f0c245c3ecbb648ee",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/836a1454399f8a34b2087c9f0c245c3ecbb648ee",
+      "date": "Sep 4, 2017 10:00:59 AM"
+    }
+  }
+}
