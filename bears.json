@@ -1,0 +1,150 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 250229217,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/250229217",
+      "date": "Jul 5, 2017 9:30:27 AM"
+    },
+    "fixerBuild": {
+      "id": 250244100,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/250244100",
+      "date": "Jul 5, 2017 10:23:02 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 9:48:25 PM",
+    "reproductionDateEnd": "Dec 15, 2018 10:08:57 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1724690032,
+      "totalMemory": 2171076608
+    },
+    "totalDuration": 1222,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 135,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          135
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 499,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          7,
+          3,
+          0,
+          1,
+          488
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 34,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          34
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/250229217/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 1,
+      "numberDeleted": 1
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/250229217/backend/manager/modules/common",
+    "overallMetrics": {
+      "numberRunning": 614,
+      "numberPassing": 613,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 0,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.common.validation.NfsMountPointConstraintTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.common.validation.NfsMountPointConstraintTest",
+        "testMethod": "isValid",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7855,
+    "numberTestFiles": 1246,
+    "numberLibrariesFailingModule": 116,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "249e15b414a3783b30e90d193579dee019a2b2c8",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/249e15b414a3783b30e90d193579dee019a2b2c8",
+      "date": "Jul 4, 2017 11:59:43 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "c0775dbcca9ae1d23c06f553635601da451ff0ab",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/c0775dbcca9ae1d23c06f553635601da451ff0ab",
+      "date": "Jul 5, 2017 9:58:15 AM"
+    }
+  },
+  "type": "passing_passing"
+}
