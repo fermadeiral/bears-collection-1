@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 235998774,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/235998774",
+      "date": "May 25, 2017 2:55:54 PM"
+    },
+    "fixerBuild": {
+      "id": 236017526,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/236017526",
+      "date": "May 25, 2017 4:04:21 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 12:02:15 AM",
+    "reproductionDateEnd": "Dec 16, 2018 12:22:00 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 973890048,
+      "totalMemory": 2368208896
+    },
+    "totalDuration": 1176,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 137,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          137
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 498,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          0,
+          1,
+          491
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 43,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          43
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/235998774/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 7,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 36,
+      "numberDeleted": 28
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/235998774/backend/manager/modules/utils",
+    "overallMetrics": {
+      "numberRunning": 1388,
+      "numberPassing": 1387,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 2,
+      "failures": [
+        {
+          "failureName": "Argument(s) are different! Wanted",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.utils.log.LoggedUtilsTest",
+        "numberRunning": 27,
+        "numberPassing": 26,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.utils.log.LoggedUtilsTest",
+        "testMethod": "testLogErrorLogsWhenLogLevelActive",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: logger.error(     \"Exception\",     \"Exception: \" ); -\u003e at org.ovirt.engine.core.utils.log.LoggedUtilsTest.testLogErrorLogsWhenLogLevelActive(LoggedUtilsTest.java:337) Actual invocation has different arguments: logger.error(     \"Exception\",     java.lang.Exception ); -\u003e at org.ovirt.engine.core.utils.log.LoggedUtils.logError(LoggedUtils.java:128) ",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7787,
+    "numberTestFiles": 1238,
+    "numberLibrariesFailingModule": 152,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "b3c2833be0a9da3c8a4f07aebeefd8fc488bb157",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/b3c2833be0a9da3c8a4f07aebeefd8fc488bb157",
+      "date": "May 25, 2017 2:30:54 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "d8a7779ee2a965e621cccf7b0ef46eaf5982180c",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/d8a7779ee2a965e621cccf7b0ef46eaf5982180c",
+      "date": "May 25, 2017 3:36:15 PM"
+    }
+  }
+}
