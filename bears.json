@@ -1,0 +1,165 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 249284498,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/249284498",
+      "date": "Jul 2, 2017 11:27:37 AM"
+    },
+    "fixerBuild": {
+      "id": 249293625,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/249293625",
+      "date": "Jul 2, 2017 12:31:08 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 9:53:03 PM",
+    "reproductionDateEnd": "Dec 15, 2018 10:16:41 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1682049248,
+      "totalMemory": 2452094976
+    },
+    "totalDuration": 1409,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 135,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          135
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 519,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          3,
+          0,
+          2,
+          511
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 249,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          249
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/249284498/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 8,
+      "numberDeleted": 7
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/249284498/backend/manager/tools",
+    "overallMetrics": {
+      "numberRunning": 6907,
+      "numberPassing": 6904,
+      "numberFailing": 3,
+      "numberErroring": 0,
+      "numberSkipping": 71,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 3
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.config.entity.helper.FenceConfigValueHelperTest",
+        "numberRunning": 28,
+        "numberPassing": 25,
+        "numberFailing": 3,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.config.entity.helper.FenceConfigValueHelperTest",
+        "testMethod": "validateFenceAgentDefaultParamsConfig[1]",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003ctrue\u003e but was:\u003cfalse\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.config.entity.helper.FenceConfigValueHelperTest",
+        "testMethod": "validateFenceAgentDefaultParamsConfig[2]",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.config.entity.helper.FenceConfigValueHelperTest",
+        "testMethod": "validateFenceAgentDefaultParamsConfig[0]",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003ctrue\u003e but was:\u003cfalse\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7851,
+    "numberTestFiles": 1248,
+    "numberLibrariesFailingModule": 59,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "b819b4f850f2a27f7598f5871d0c90de9fbd572d",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/b819b4f850f2a27f7598f5871d0c90de9fbd572d",
+      "date": "Jul 2, 2017 11:03:22 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "46a9f67421a608d1ebfb6b8d518428c33dcc169b",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/46a9f67421a608d1ebfb6b8d518428c33dcc169b",
+      "date": "Jul 2, 2017 12:06:42 PM"
+    }
+  }
+}
