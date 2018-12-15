@@ -1,0 +1,202 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 272836492,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/272836492",
+      "date": "Sep 7, 2017 12:36:29 PM"
+    },
+    "fixerBuild": {
+      "id": 272862924,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/272862924",
+      "date": "Sep 7, 2017 2:10:20 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 7:41:57 PM",
+    "reproductionDateEnd": "Dec 15, 2018 8:08:35 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1453979776,
+      "totalMemory": 2350383104
+    },
+    "totalDuration": 1590,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 141,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          141
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 582,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          0,
+          1,
+          575
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 193,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          193
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/272836492/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 2,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 18,
+      "numberDeleted": 12
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/272836492/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4863,
+      "numberPassing": 4856,
+      "numberFailing": 0,
+      "numberErroring": 7,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 7
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVmTemplateCommandTest",
+        "numberRunning": 11,
+        "numberPassing": 10,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVMFromConfigurationCommandTest",
+        "numberRunning": 5,
+        "numberPassing": 4,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVmCommandTest",
+        "numberRunning": 16,
+        "numberPassing": 11,
+        "numberFailing": 0,
+        "numberErroring": 5,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVmCommandTest",
+        "testMethod": "insufficientDiskSpaceWithSnapshots",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVMFromConfigurationCommandTest",
+        "testMethod": "testPositiveImportVmFromConfiguration",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVmCommandTest",
+        "testMethod": "lowThresholdStorageSpace",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVmCommandTest",
+        "testMethod": "insufficientDiskSpaceWithCollapse",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVmCommandTest",
+        "testMethod": "refuseSoundDeviceOnPPC",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVmCommandTest",
+        "testMethod": "refuseBalloonOnPPC",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.exportimport.ImportVmTemplateCommandTest",
+        "testMethod": "validVolumeFormatAndTypeCombinations",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7763,
+    "numberTestFiles": 1253,
+    "numberLibrariesFailingModule": 197,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "037a41242e11278f7fa996cd8a208a4fbad4d07a",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/037a41242e11278f7fa996cd8a208a4fbad4d07a",
+      "date": "Sep 7, 2017 12:12:31 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "7331312aa931a3b508ab66e66c78b72ff8c8b725",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/7331312aa931a3b508ab66e66c78b72ff8c8b725",
+      "date": "Sep 7, 2017 1:46:11 PM"
+    }
+  }
+}
