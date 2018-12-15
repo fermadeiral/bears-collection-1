@@ -1,0 +1,260 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 275338583,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/275338583",
+      "date": "Sep 14, 2017 8:57:50 AM"
+    },
+    "fixerBuild": {
+      "id": 275348197,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/275348197",
+      "date": "Sep 14, 2017 9:34:34 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 7:18:31 PM",
+    "reproductionDateEnd": "Dec 15, 2018 7:42:41 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1412668904,
+      "totalMemory": 2464153600
+    },
+    "totalDuration": 1442,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 138,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          138
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 560,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          2,
+          0,
+          1,
+          554
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 94,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          94
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/275338583/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 23,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 81,
+      "numberDeleted": 80
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/275338583/backend/manager/modules/vdsbroker",
+    "overallMetrics": {
+      "numberRunning": 1520,
+      "numberPassing": 1504,
+      "numberFailing": 0,
+      "numberErroring": 16,
+      "numberSkipping": 3,
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "isError": true,
+          "occurrences": 15
+        },
+        {
+          "failureName": "java.lang.ExceptionInInitializerError",
+          "isError": true,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "numberRunning": 16,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 16,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Down is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status PendingApproval is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Connecting is monitoring needed - true]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Reboot is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Error is monitoring needed - true]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Maintenance is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Kdumping is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Unassigned is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status NonResponsive is monitoring needed - true]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status PreparingForMaintenance is monitoring needed - true]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status InstallingOS is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Installing is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status NonOperational is monitoring needed - true]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Up is monitoring needed - true]",
+        "failureName": "java.lang.ExceptionInInitializerError",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status Initializing is monitoring needed - true]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresherTest",
+        "testMethod": "testMonitoringNeededByStatus[status InstallFailed is monitoring needed - false]",
+        "failureName": "java.lang.NoClassDefFoundError",
+        "detail": "Could not initialize class org.ovirt.engine.core.vdsbroker.monitoring.PollVmStatsRefresher",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7767,
+    "numberTestFiles": 1256,
+    "numberLibrariesFailingModule": 175,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "65b31af633f465ab8e84c0ef3d0e53fbfb179d23",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/65b31af633f465ab8e84c0ef3d0e53fbfb179d23",
+      "date": "Sep 14, 2017 8:33:05 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "ee5f2d7b023467c5bd50c34145b08d607de6da74",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/ee5f2d7b023467c5bd50c34145b08d607de6da74",
+      "date": "Sep 14, 2017 9:10:14 AM"
+    }
+  },
+  "type": "passing_passing"
+}
