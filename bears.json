@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 241752604,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/241752604",
+      "date": "Jun 11, 2017 5:57:50 PM"
+    },
+    "fixerBuild": {
+      "id": 241769652,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/241769652",
+      "date": "Jun 11, 2017 7:18:45 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 10:52:12 PM",
+    "reproductionDateEnd": "Dec 15, 2018 11:13:41 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 821430376,
+      "totalMemory": 2710044672
+    },
+    "totalDuration": 1280,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 134,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          134
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 489,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          2,
+          0,
+          2,
+          480
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 158,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          158
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/241752604/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 4,
+      "numberDeleted": 1
+    }
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "7839aa26968a72229f3166ca350b470b12c25e50",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/7839aa26968a72229f3166ca350b470b12c25e50",
+      "date": "Jun 11, 2017 5:31:40 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "3c74d3b2bdafc39909324041a0dfbdd172d88589",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/3c74d3b2bdafc39909324041a0dfbdd172d88589",
+      "date": "Jun 11, 2017 6:53:51 PM"
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/241752604/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 5078,
+      "numberPassing": 5077,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.domain.SyncLunsInfoForBlockStorageDomainCommandTest",
+        "numberRunning": 9,
+        "numberPassing": 8,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.domain.SyncLunsInfoForBlockStorageDomainCommandTest",
+        "testMethod": "testGetLunsToUpdateInDbSameLunIdDiffPvId",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003c[org.ovirt.engine.core.bll.storage.domain.SyncLunsInfoForBlockStorageDomainCommand$1@6a38baf]\u003e but was:\u003c[org.ovirt.engine.core.bll.storage.domain.SyncLunsInfoForBlockStorageDomainCommand$1@6a38baf, org.ovirt.engine.core.bll.storage.domain.SyncLunsInfoForBlockStorageDomainCommand$3@120eca51]\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7802,
+    "numberTestFiles": 1249,
+    "numberLibrariesFailingModule": 189,
+    "numberLines": 0
+  }
+}
