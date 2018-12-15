@@ -1,0 +1,180 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 274131108,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/274131108",
+      "date": "Sep 11, 2017 1:26:15 PM"
+    },
+    "fixerBuild": {
+      "id": 274248547,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/274248547",
+      "date": "Sep 11, 2017 6:49:42 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 7:35:30 PM",
+    "reproductionDateEnd": "Dec 15, 2018 8:01:32 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2065732856,
+      "totalMemory": 2506096640
+    },
+    "totalDuration": 1554,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 140,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          140
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 577,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          1,
+          1,
+          569
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 199,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          199
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/274131108/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 2,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 14,
+      "numberDeleted": 3
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/274131108/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4862,
+      "numberPassing": 4856,
+      "numberFailing": 0,
+      "numberErroring": 6,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 6
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.macpool.MacPoolPerClusterTest",
+        "numberRunning": 9,
+        "numberPassing": 3,
+        "numberFailing": 0,
+        "numberErroring": 6,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.macpool.MacPoolPerClusterTest",
+        "testMethod": "testRemoveOfMacPool",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.macpool.MacPoolPerClusterTest",
+        "testMethod": "testCreatePoolWhichExists",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.macpool.MacPoolPerClusterTest",
+        "testMethod": "testModifyOfExistingMacPool",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.macpool.MacPoolPerClusterTest",
+        "testMethod": "testNicIsCorrectlyAllocatedInScopedPool",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.macpool.MacPoolPerClusterTest",
+        "testMethod": "testCreatePool",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.macpool.MacPoolPerClusterTest",
+        "testMethod": "testPoolOfGivenGuidExist",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7762,
+    "numberTestFiles": 1252,
+    "numberLibrariesFailingModule": 197,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "eaa0aff399365dae3567062a2bb77fcff0939d93",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/eaa0aff399365dae3567062a2bb77fcff0939d93",
+      "date": "Sep 11, 2017 1:02:16 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "8194ee5ee8bff3ef960b618628a8d62360811242",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/8194ee5ee8bff3ef960b618628a8d62360811242",
+      "date": "Sep 11, 2017 5:27:22 PM"
+    }
+  }
+}
