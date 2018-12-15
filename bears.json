@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 279471878,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/279471878",
+      "date": "Sep 25, 2017 1:36:38 PM"
+    },
+    "fixerBuild": {
+      "id": 279485371,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/279485371",
+      "date": "Sep 25, 2017 2:24:56 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 6:34:24 PM",
+    "reproductionDateEnd": "Dec 15, 2018 6:58:50 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1636192712,
+      "totalMemory": 2634022912
+    },
+    "totalDuration": 1456,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 140,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          140
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 580,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          2,
+          0,
+          1,
+          574
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 50,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          50
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/279471878/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 1,
+      "numberDeleted": 1
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/279471878/backend/manager/modules/common",
+    "overallMetrics": {
+      "numberRunning": 626,
+      "numberPassing": 625,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 0,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ValidationUtilsTest",
+        "numberRunning": 5,
+        "numberPassing": 4,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.common.utils.ValidationUtilsTest",
+        "testMethod": "testTrimmingWhitespaces",
+        "failureName": "java.lang.AssertionError",
+        "detail": "Valid string (no trimming whitespaces): a",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7772,
+    "numberTestFiles": 1258,
+    "numberLibrariesFailingModule": 123,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "9f41aa5544d21eeb36605a64a467b1210d3b6517",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/9f41aa5544d21eeb36605a64a467b1210d3b6517",
+      "date": "Sep 25, 2017 1:08:03 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "b795d23b61ba169ae41210c578dde9448531f1c6",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/b795d23b61ba169ae41210c578dde9448531f1c6",
+      "date": "Sep 25, 2017 1:57:52 PM"
+    }
+  },
+  "type": "passing_passing"
+}
