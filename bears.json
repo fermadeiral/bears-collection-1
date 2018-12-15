@@ -1,0 +1,156 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 302408545,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/302408545",
+      "date": "Nov 15, 2017 11:40:24 AM"
+    },
+    "fixerBuild": {
+      "id": 302422380,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/302422380",
+      "date": "Nov 15, 2017 12:20:44 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 3:28:29 PM",
+    "reproductionDateEnd": "Dec 15, 2018 3:56:55 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2046391720,
+      "totalMemory": 2484600832
+    },
+    "totalDuration": 1698,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 138,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          138
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 602,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          3,
+          0,
+          2,
+          594
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 261,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          261
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/302408545/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 2,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 0,
+      "numberDeleted": 8
+    }
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "6f49aede8ff6032246c83ff6c29a0f7d165c910b",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/6f49aede8ff6032246c83ff6c29a0f7d165c910b",
+      "date": "Nov 15, 2017 11:17:53 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "951a6b199e1c13aa57f1df4ff71a0be8b7c714f5",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/951a6b199e1c13aa57f1df4ff71a0be8b7c714f5",
+      "date": "Nov 15, 2017 11:55:46 AM"
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/302408545/backend/manager/modules/restapi/types",
+    "overallMetrics": {
+      "numberRunning": 5124,
+      "numberPassing": 5122,
+      "numberFailing": 2,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 2
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.api.restapi.types.WatchdogMapperTest",
+        "numberRunning": 6,
+        "numberPassing": 4,
+        "numberFailing": 2,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.api.restapi.types.WatchdogMapperTest",
+        "testMethod": "mapBackendModel",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.types.WatchdogMapperTest",
+        "testMethod": "mapModel",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7807,
+    "numberTestFiles": 1264,
+    "numberLibrariesFailingModule": 182,
+    "numberLines": 0
+  },
+  "type": "passing_passing"
+}
