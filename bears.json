@@ -1,0 +1,185 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 278312200,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/278312200",
+      "date": "Sep 21, 2017 9:08:01 PM"
+    },
+    "fixerBuild": {
+      "id": 279149074,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/279149074",
+      "date": "Sep 24, 2017 11:25:42 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 6:42:01 PM",
+    "reproductionDateEnd": "Dec 15, 2018 7:08:50 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1004669656,
+      "totalMemory": 2530213888
+    },
+    "totalDuration": 1601,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 141,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          141
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 582,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          2,
+          0,
+          1,
+          576
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 202,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          202
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/278312200/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 3,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 17,
+      "numberDeleted": 3
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/278312200/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4876,
+      "numberPassing": 4873,
+      "numberFailing": 2,
+      "numberErroring": 1,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 2
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotUnPlugDiskFromVmCommandTest",
+        "numberRunning": 9,
+        "numberPassing": 8,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotPlugDiskToVmCommandTest",
+        "numberRunning": 9,
+        "numberPassing": 8,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "numberRunning": 34,
+        "numberPassing": 33,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotUnPlugDiskFromVmCommandTest",
+        "testMethod": "validateFailedGuestOsIsNotSupported",
+        "failureName": "java.lang.AssertionError",
+        "detail": "validate messages doesn\u0027t contain expected message: ACTION_TYPE_DISK_INTERFACE_UNSUPPORTED, messages are: [ACTION_TYPE_FAILED_GUEST_OS_VERSION_IS_NOT_SUPPORTED]",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotPlugDiskToVmCommandTest",
+        "testMethod": "validateFailedGuestOsIsNotSupported",
+        "failureName": "java.lang.AssertionError",
+        "detail": "validate messages doesn\u0027t contain expected message: ACTION_TYPE_DISK_INTERFACE_UNSUPPORTED, messages are: [ACTION_TYPE_FAILED_GUEST_OS_VERSION_IS_NOT_SUPPORTED]",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "testLunDiskWithSgioCanBeAdded",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7772,
+    "numberTestFiles": 1258,
+    "numberLibrariesFailingModule": 197,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "fcfc9a782d2289cb3bf1baf6a008fbb42381820b",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/fcfc9a782d2289cb3bf1baf6a008fbb42381820b",
+      "date": "Sep 21, 2017 8:05:30 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "a1cf16c9bc71d0becd366a882b0a46e9748097a0",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/a1cf16c9bc71d0becd366a882b0a46e9748097a0",
+      "date": "Sep 24, 2017 11:00:34 AM"
+    }
+  }
+}
