@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 260191656,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/260191656",
+      "date": "Aug 2, 2017 3:31:27 PM"
+    },
+    "fixerBuild": {
+      "id": 260322277,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/260322277",
+      "date": "Aug 2, 2017 9:06:27 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 9:17:21 PM",
+    "reproductionDateEnd": "Dec 15, 2018 9:38:40 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 635626296,
+      "totalMemory": 2191523840
+    },
+    "totalDuration": 1267,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 133,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          133
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 485,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          0,
+          1,
+          478
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 158,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          158
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/260191656/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 2,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 30,
+      "numberDeleted": 3
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/260191656/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4789,
+      "numberPassing": 4788,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "numberRunning": 37,
+        "numberPassing": 36,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "validateSucceedsOnDiskDomainCheckWhenEmptyStorageGuidInParams",
+        "failureName": "java.lang.AssertionError",
+        "detail": "Command\u0027s validate expected to fail, but succeeded",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 59,
+    "numberSourceFiles": 7735,
+    "numberTestFiles": 1249,
+    "numberLibrariesFailingModule": 197,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "165e30e00aed024e4cdcf80ff869e513567dd288",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/165e30e00aed024e4cdcf80ff869e513567dd288",
+      "date": "Aug 2, 2017 3:07:51 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "517efcce45754607ddc602a79d03ab5596b521c4",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/517efcce45754607ddc602a79d03ab5596b521c4",
+      "date": "Aug 2, 2017 8:15:00 PM"
+    }
+  },
+  "type": "passing_passing"
+}
