@@ -1,0 +1,174 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 282128961,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/282128961",
+      "date": "Oct 2, 2017 9:20:59 AM"
+    },
+    "fixerBuild": {
+      "id": 282144005,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/282144005",
+      "date": "Oct 2, 2017 10:20:16 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 6:14:36 PM",
+    "reproductionDateEnd": "Dec 15, 2018 6:41:57 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1408855976,
+      "totalMemory": 2491940864
+    },
+    "totalDuration": 1631,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 140,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          140
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 601,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          4,
+          0,
+          4,
+          590
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 217,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          217
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/282128961/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 4,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 21,
+      "numberDeleted": 18
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/282128961/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4875,
+      "numberPassing": 4870,
+      "numberFailing": 0,
+      "numberErroring": 5,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 5
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.image.MetadataDiskDescriptionHandlerTest",
+        "numberRunning": 11,
+        "numberPassing": 6,
+        "numberFailing": 0,
+        "numberErroring": 5,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.image.MetadataDiskDescriptionHandlerTest",
+        "testMethod": "encodeWhenDescriptionIsCompletelyTruncated",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.image.MetadataDiskDescriptionHandlerTest",
+        "testMethod": "encodeWhenAliasIsTruncated",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.image.MetadataDiskDescriptionHandlerTest",
+        "testMethod": "encodeWhenNonAsciiDiskDescriptionIsTruncated",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.image.MetadataDiskDescriptionHandlerTest",
+        "testMethod": "encodeWhenDescriptionIsTruncated",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.image.MetadataDiskDescriptionHandlerTest",
+        "testMethod": "encodeWhenNonAsciiAliasIsTruncated",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7773,
+    "numberTestFiles": 1258,
+    "numberLibrariesFailingModule": 197,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "fe89063604684f6c90fb73911b814e63048d76c3",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/fe89063604684f6c90fb73911b814e63048d76c3",
+      "date": "Oct 2, 2017 8:59:11 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "11e1fb110e214e926196f7fd1a70d4f74003333d",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/11e1fb110e214e926196f7fd1a70d4f74003333d",
+      "date": "Oct 2, 2017 9:59:09 AM"
+    }
+  }
+}
