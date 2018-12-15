@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+    xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:w="urn:import:org.ovirt.engine.ui.common.widget"
+    xmlns:b="urn:import:org.gwtbootstrap3.client.ui">
+
+    <ui:style>
+        .inheritPosition {
+            position: inherit;
+        }
+
+        .topSeparation {
+            padding-bottom: 20px;
+        }
+
+        .breadCrumbsBorder {
+            border-bottom: 1px solid #D1D1D1;
+        }
+    </ui:style>
+
+    <g:FlowPanel>
+        <b:Container fluid="true" addStyleNames="obrand_main_tab">
+            <b:Row addStyleNames="{style.topSeparation}">
+                <b:Column size="SM_12 LG_6" ui:field="breadCrumbsContainer" addStyleNames="{style.breadCrumbsBorder}" />
+                <b:Column size="SM_12 LG_6" ui:field="mainActionPanel" addStyleNames="detailMainActionPanelContainer" />
+            </b:Row>
+            <b:Row>
+                <b:Column size="SM_12" addStyleNames="{style.inheritPosition}">
+                    <g:FlowPanel ui:field="tabContainer" />
+                    <g:SimplePanel ui:field="tabContentContainer" />
+                </b:Column>
+            </b:Row>
+        </b:Container>
+    </g:FlowPanel>
+
+</ui:UiBinder>
