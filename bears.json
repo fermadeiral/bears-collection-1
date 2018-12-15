@@ -1,0 +1,163 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 260070074,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/260070074",
+      "date": "Aug 2, 2017 8:58:10 AM"
+    },
+    "fixerBuild": {
+      "id": 260080453,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/260080453",
+      "date": "Aug 2, 2017 9:45:22 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 9:27:15 PM",
+    "reproductionDateEnd": "Dec 15, 2018 9:47:40 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 972908520,
+      "totalMemory": 2278555648
+    },
+    "totalDuration": 1215,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 156,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          156
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 492,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          2,
+          0,
+          1,
+          486
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 73,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          73
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/260070074/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 3,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 20,
+      "numberDeleted": 7
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/260070074/backend/manager/modules/vdsbroker",
+    "overallMetrics": {
+      "numberRunning": 1515,
+      "numberPassing": 1513,
+      "numberFailing": 2,
+      "numberErroring": 0,
+      "numberSkipping": 3,
+      "failures": [
+        {
+          "failureName": "Wanted but not invoked",
+          "isError": false,
+          "occurrences": 1
+        },
+        {
+          "failureName": "Argument(s) are different! Wanted",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.VmDevicesMonitoringTest",
+        "numberRunning": 11,
+        "numberPassing": 9,
+        "numberFailing": 2,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.VmDevicesMonitoringTest",
+        "testMethod": "testFullListErasesIndividualUpdateDevice",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: resourceManager.runVdsCommand(     DumpXmls,     \u003cany\u003e ); -\u003e at org.ovirt.engine.core.vdsbroker.monitoring.VmDevicesMonitoringTest.testFullListErasesIndividualUpdateDevice(VmDevicesMonitoringTest.java:429) Actual invocation has different arguments: resourceManager.runVdsCommand(     FullList,     FullListVDSCommandParameters:{hostId\u003d\u0027b7dfe5e6-5667-4e40-8ecb-6d97c8df504d\u0027, vmIds\u003d\u0027[7cfc3666-5185-4438-8381-646de77ca9a7]\u0027} ); -\u003e at org.ovirt.engine.core.vdsbroker.monitoring.VmDevicesMonitoring.runVdsCommand(VmDevicesMonitoring.java:320) ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.monitoring.VmDevicesMonitoringTest",
+        "testMethod": "testUpdateVm",
+        "failureName": "Wanted but not invoked",
+        "detail": " Wanted but not invoked: vmDeviceDao.updateAllInBatch(     \u003cCapturing argument\u003e ); -\u003e at org.ovirt.engine.core.vdsbroker.monitoring.VmDevicesMonitoringTest.testUpdateVm(VmDevicesMonitoringTest.java:207) Actually, there were zero interactions with this mock. ",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 59,
+    "numberSourceFiles": 7730,
+    "numberTestFiles": 1246,
+    "numberLibrariesFailingModule": 175,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "dc79e7d2f0cd5828e610b999b66c85865d9dfab8",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/dc79e7d2f0cd5828e610b999b66c85865d9dfab8",
+      "date": "Aug 2, 2017 8:35:33 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "634a4a1411d75395e4700669a35b9b8d3db0cf0f",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/634a4a1411d75395e4700669a35b9b8d3db0cf0f",
+      "date": "Aug 2, 2017 9:20:23 AM"
+    }
+  }
+}
