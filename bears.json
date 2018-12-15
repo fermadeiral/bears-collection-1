@@ -1,0 +1,158 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 237440051,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/237440051",
+      "date": "May 30, 2017 11:46:12 AM"
+    },
+    "fixerBuild": {
+      "id": 237448338,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/237448338",
+      "date": "May 30, 2017 12:13:01 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 11:41:17 PM",
+    "reproductionDateEnd": "Dec 16, 2018 12:03:42 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 434483664,
+      "totalMemory": 2638741504
+    },
+    "totalDuration": 1335,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 138,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          138
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 512,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          0,
+          1,
+          505
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 173,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          173
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/237440051/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 92,
+      "numberDeleted": 1
+    },
+    "lines": {
+      "numberAdded": 117,
+      "numberDeleted": 373
+    }
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "2634656c312edabeae6372e4ca507cedab7f3f9d",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/2634656c312edabeae6372e4ca507cedab7f3f9d",
+      "date": "May 30, 2017 11:23:09 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "49d6b66dc5c374196b1a5afbcd8d3f858ba4afd1",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/49d6b66dc5c374196b1a5afbcd8d3f858ba4afd1",
+      "date": "May 30, 2017 11:48:45 AM"
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/237440051/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 5048,
+      "numberPassing": 5046,
+      "numberFailing": 2,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 2
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.VmInterfaceManagerTest",
+        "numberRunning": 5,
+        "numberPassing": 3,
+        "numberFailing": 2,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.VmInterfaceManagerTest",
+        "testMethod": "testAuditLogMacInUseUnplug",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003c00000000-0000-0000-0000-000000000000\u003e but was:\u003cnull\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.VmInterfaceManagerTest",
+        "testMethod": "testAuditLogMacInUse",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003c00000000-0000-0000-0000-000000000000\u003e but was:\u003cnull\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7793,
+    "numberTestFiles": 1244,
+    "numberLibrariesFailingModule": 189,
+    "numberLines": 0
+  },
+  "type": "passing_passing"
+}
