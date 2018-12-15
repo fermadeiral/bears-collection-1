@@ -1,0 +1,158 @@
+{
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 233633676,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/233633676",
+      "date": "May 18, 2017 3:54:28 PM"
+    },
+    "fixerBuild": {
+      "id": 233647575,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/233647575",
+      "date": "May 18, 2017 4:27:18 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 12:17:38 AM",
+    "reproductionDateEnd": "Dec 16, 2018 12:39:08 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 940020040,
+      "totalMemory": 2393374720
+    },
+    "totalDuration": 1281,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 135,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          135
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 496,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          0,
+          1,
+          489
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 158,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          158
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/233633676/pom.xml"
+  },
+  "version": "Bears 1.0",
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 13,
+      "numberDeleted": 1
+    },
+    "lines": {
+      "numberAdded": 124,
+      "numberDeleted": 116
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/233633676/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4995,
+      "numberPassing": 4993,
+      "numberFailing": 2,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "org.mockito.exceptions.verification.TooManyActualInvocations",
+          "isError": false,
+          "occurrences": 2
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest",
+        "numberRunning": 3,
+        "numberPassing": 1,
+        "numberFailing": 2,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest",
+        "testMethod": "testRefreshGlusterServicesWhenVdsmVerbFails",
+        "failureName": "org.mockito.exceptions.verification.TooManyActualInvocations",
+        "detail": " clusterServiceDao.update(     \u003cGluster service sync job test$$ lambda$ 1 2 5/ 1 9 9 5 2 7 4 2 6 6\u003e ); Wanted 1 time: -\u003e at org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest.verifyNoChangesWithFailureOnServer1(GlusterServiceSyncJobTest.java:279) But was 2 times. Undesired invocation: -\u003e at org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJob.updateClusterServiceStatus(GlusterServiceSyncJob.java:302) ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest",
+        "testMethod": "testRefreshGlusterServicesWithChanges",
+        "failureName": "org.mockito.exceptions.verification.TooManyActualInvocations",
+        "detail": " clusterServiceDao.update(     \u003cGluster service sync job test$$ lambda$ 1 2 5/ 1 9 9 5 2 7 4 2 6 6\u003e ); Wanted 1 time: -\u003e at org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest.verifyWithChanges(GlusterServiceSyncJobTest.java:289) But was 2 times. Undesired invocation: -\u003e at org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJob.updateClusterServiceStatus(GlusterServiceSyncJob.java:302) ",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7781,
+    "numberTestFiles": 1232,
+    "numberLibrariesFailingModule": 189,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "771c54bb72d9872c3ce51a6aaccd7e6ec7254d24",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/771c54bb72d9872c3ce51a6aaccd7e6ec7254d24",
+      "date": "May 18, 2017 3:28:04 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "f575e22ff9fbe7bf93f2fc99a392d7b574855957",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/f575e22ff9fbe7bf93f2fc99a392d7b574855957",
+      "date": "May 18, 2017 4:02:38 PM"
+    }
+  },
+  "type": "passing_passing"
+}
