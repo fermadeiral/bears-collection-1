@@ -6,7 +6,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 import static org.ovirt.engine.core.utils.MockConfigRule.mockConfig;
 
@@ -83,6 +82,7 @@ public class UpdateStoragePoolCommandTest extends BaseCommandTest {
     private NetworkDao networkDao;
     @Mock
     private ManagementNetworkUtil managementNetworkUtil;
+    @Mock
     private StoragePoolValidator poolValidator;
 
     @Before
@@ -91,8 +91,6 @@ public class UpdateStoragePoolCommandTest extends BaseCommandTest {
         when(clusterDao.getAllForStoragePool(any())).thenReturn(createClusterList());
 
         // Spy the StoragePoolValidator:
-        poolValidator = spy(new StoragePoolValidator(cmd.getStoragePool()));
-        doReturn(ValidationResult.VALID).when(poolValidator).isNotLocalfsWithDefaultCluster();
         doReturn(poolValidator).when(cmd).createStoragePoolValidator();
     }
 
@@ -244,9 +242,9 @@ public class UpdateStoragePoolCommandTest extends BaseCommandTest {
         assertFalse(cmd.checkAllClustersLevel());
         List<String> messages = cmd.getReturnValue().getValidationMessages();
         assertTrue(messages.contains(EngineMessage.ERROR_CANNOT_UPDATE_STORAGE_POOL_COMPATIBILITY_VERSION_BIGGER_THAN_CLUSTERS.toString()));
-        assertTrue(messages.get(0).contains("firstCluster"));
-        assertFalse(messages.get(0).contains("secondCluster"));
-        assertTrue(messages.get(0).contains("thirdCluster"));
+        assertTrue(messages.get(1).contains("firstCluster"));
+        assertFalse(messages.get(1).contains("secondCluster"));
+        assertTrue(messages.get(1).contains("thirdCluster"));
     }
 
     @Test
