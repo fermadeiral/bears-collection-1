@@ -1,0 +1,132 @@
+package org.ovirt.engine.ui.webadmin.section.main.view.tab;
+
+import java.util.List;
+
+import org.ovirt.engine.core.common.scheduling.AffinityGroup;
+import org.ovirt.engine.ui.common.uicommon.model.SearchableDetailModelProvider;
+import org.ovirt.engine.ui.common.widget.table.column.AbstractBooleanColumn;
+import org.ovirt.engine.ui.common.widget.table.column.AbstractTextColumn;
+import org.ovirt.engine.ui.uicommonweb.UICommand;
+import org.ovirt.engine.ui.uicommonweb.models.ListWithDetailsModel;
+import org.ovirt.engine.ui.uicommonweb.models.configure.scheduling.affinity_groups.list.AffinityGroupListModel;
+import org.ovirt.engine.ui.uicompat.external.StringUtils;
+import org.ovirt.engine.ui.webadmin.ApplicationConstants;
+import org.ovirt.engine.ui.webadmin.gin.AssetProvider;
+import org.ovirt.engine.ui.webadmin.section.main.view.AbstractSubTabTableView;
+import org.ovirt.engine.ui.webadmin.widget.action.WebAdminButtonDefinition;
+
+public abstract class AbstractSubTabAffinityGroupsView<I, M extends ListWithDetailsModel, T extends AffinityGroupListModel<?>> extends AbstractSubTabTableView<I, AffinityGroup, M, T> {
+
+    private static final ApplicationConstants constants = AssetProvider.getConstants();
+
+    public AbstractSubTabAffinityGroupsView(SearchableDetailModelProvider<AffinityGroup, M, T> modelProvider) {
+        super(modelProvider);
+        generateIds();
+        initTable();
+        initWidget(getTableContainer());
+    }
+
+    private void initTable() {
+        getTable().enableColumnResizing();
+
+        AbstractTextColumn<AffinityGroup> nameColumn = new AbstractTextColumn<AffinityGroup>() {
+            @Override
+            public String getValue(AffinityGroup object) {
+                return object.getName();
+            }
+        };
+        nameColumn.makeSortable();
+        getTable().addColumn(nameColumn, constants.nameAffinityGroup(), "150px"); //$NON-NLS-1$
+
+        AbstractTextColumn<AffinityGroup> descColumn = new AbstractTextColumn<AffinityGroup>() {
+            @Override
+            public String getValue(AffinityGroup object) {
+                return object.getDescription();
+            }
+        };
+        descColumn.makeSortable();
+        getTable().addColumn(descColumn, constants.descriptionAffinityGroup(), "150px"); //$NON-NLS-1$
+
+        AbstractBooleanColumn<AffinityGroup> polarityColumn =
+                new AbstractBooleanColumn<AffinityGroup>(constants.positiveAffinity(), constants.negativeAffinity()) {
+
+            @Override
+            protected Boolean getRawValue(AffinityGroup object) {
+                return object.getVmPolarityBooleanObject();
+            }
+        };
+        polarityColumn.makeSortable();
+        getTable().addColumn(polarityColumn, constants.polarityAffinityGroup(), "100px"); //$NON-NLS-1$
+
+        AbstractBooleanColumn<AffinityGroup> enforceColumn =
+                new AbstractBooleanColumn<AffinityGroup>(constants.hardEnforcingAffinity(), constants.softEnforcingAffinity()) {
+
+                    @Override
+                    protected Boolean getRawValue(AffinityGroup object) {
+                        return object.isVmEnforcing();
+                    }
+                };
+        enforceColumn.makeSortable();
+        getTable().addColumn(enforceColumn, constants.enforceAffinityGroup(), "100px"); //$NON-NLS-1$
+
+        AbstractTextColumn<AffinityGroup> vmMembersColumn = new AbstractTextColumn<AffinityGroup>() {
+            @Override
+            public String getValue(AffinityGroup group) {
+                String vmNames = StringUtils.join(getVmNames(group), ", "); //$NON-NLS-1$
+                if (vmNames.isEmpty()) {
+                    return constants.noMembersAffinityGroup();
+                }
+                return vmNames;
+            }
+        };
+        vmMembersColumn.makeSortable();
+        getTable().addColumn(vmMembersColumn, constants.vmMembersAffinityGroup(), "500px"); //$NON-NLS-1$
+
+        AbstractTextColumn<AffinityGroup> hostMembersColumn = new AbstractTextColumn<AffinityGroup>() {
+            @Override
+            public String getValue(AffinityGroup group) {
+                String hostNames = StringUtils.join(getHostNames(group), ", "); //$NON-NLS-1$
+                if (hostNames.isEmpty()) {
+                    return constants.noMembersAffinityGroup();
+                }
+                return hostNames;
+            }
+        };
+        hostMembersColumn.makeSortable();
+        getTable().addColumn(hostMembersColumn, constants.hostMembersAffinityGroup(), "500px"); //$NON-NLS-1$
+
+        addButtonToActionGroup(
+        getTable().addActionButton(new WebAdminButtonDefinition<AffinityGroup>(constants.newAffinityGroupLabel()) {
+            @Override
+            protected UICommand resolveCommand() {
+                return getDetailModel().getNewCommand();
+            }
+        }));
+
+        addButtonToActionGroup(
+        getTable().addActionButton(new WebAdminButtonDefinition<AffinityGroup>(constants.editAffinityGroupLabel()) {
+            @Override
+            protected UICommand resolveCommand() {
+                return getDetailModel().getEditCommand();
+            }
+        }));
+
+        addButtonToActionGroup(
+        getTable().addActionButton(new WebAdminButtonDefinition<AffinityGroup>(constants.removeAffinityGroupLabel()) {
+            @Override
+            protected UICommand resolveCommand() {
+                return getDetailModel().getRemoveCommand();
+            }
+        }));
+    }
+
+    protected List<String> getVmNames(AffinityGroup group) {
+        return group.getVmEntityNames();
+    }
+
+    protected List<String> getHostNames(AffinityGroup group) {
+        return group.getVdsEntityNames();
+    }
+
+    protected abstract void generateIds();
+}
