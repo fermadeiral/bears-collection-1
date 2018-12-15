@@ -1,0 +1,219 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 275518789,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/275518789",
+      "date": "Sep 14, 2017 5:57:40 PM"
+    },
+    "fixerBuild": {
+      "id": 275543997,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/275543997",
+      "date": "Sep 14, 2017 7:01:50 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 7:04:51 PM",
+    "reproductionDateEnd": "Dec 15, 2018 7:34:45 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1939935192,
+      "totalMemory": 2409627648
+    },
+    "totalDuration": 1784,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 185,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          185
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 648,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          3,
+          2,
+          0,
+          2,
+          641
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 294,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          294
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/275518789/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 5,
+      "numberDeleted": 2
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/275518789/backend/manager/modules/restapi/jaxrs",
+    "overallMetrics": {
+      "numberRunning": 6909,
+      "numberPassing": 6899,
+      "numberFailing": 10,
+      "numberErroring": 0,
+      "numberSkipping": 71,
+      "failures": [
+        {
+          "failureName": "Argument(s) are different! Wanted",
+          "isError": false,
+          "occurrences": 5
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 5
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "numberRunning": 13,
+        "numberPassing": 3,
+        "numberFailing": 10,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testQuery",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003c3\u003e but was:\u003c0\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testList",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: backend.runQuery(     Search,     \u003cSearch parameters equals\u003e ); -\u003e at org.ovirt.engine.api.restapi.resource.AbstractBackendCollectionResourceTest.lambda$setUpQueryExpectations$0(AbstractBackendCollectionResourceTest.java:201) Actual invocation has different arguments: backend.runQuery(     GetAllDisksWithSnapshots,     QueryParametersBase:{refresh\u003d\u0027false\u0027, filtered\u003d\u0027false\u0027} ); -\u003e at org.ovirt.engine.api.restapi.resource.BackendResource.runQuery(BackendResource.java:82) ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testQuery",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: backend.runQuery(     Search,     \u003cSearch parameters equals\u003e ); -\u003e at org.ovirt.engine.api.restapi.resource.AbstractBackendCollectionResourceTest.lambda$setUpQueryExpectations$0(AbstractBackendCollectionResourceTest.java:201) Actual invocation has different arguments: backend.runQuery(     GetAllDisksWithSnapshots,     QueryParametersBase:{refresh\u003d\u0027false\u0027, filtered\u003d\u0027false\u0027} ); -\u003e at org.ovirt.engine.api.restapi.resource.BackendResource.runQuery(BackendResource.java:82) ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testListCrashClientLocale",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: backend.runQuery(     Search,     \u003cSearch parameters equals\u003e ); -\u003e at org.ovirt.engine.api.restapi.resource.AbstractBackendCollectionResourceTest.lambda$setUpQueryExpectations$0(AbstractBackendCollectionResourceTest.java:201) Actual invocation has different arguments: backend.runQuery(     GetAllDisksWithSnapshots,     QueryParametersBase:{refresh\u003d\u0027false\u0027, filtered\u003d\u0027false\u0027} ); -\u003e at org.ovirt.engine.api.restapi.resource.BackendResource.runQuery(BackendResource.java:82) ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testListCrash",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: backend.runQuery(     Search,     \u003cSearch parameters equals\u003e ); -\u003e at org.ovirt.engine.api.restapi.resource.AbstractBackendCollectionResourceTest.lambda$setUpQueryExpectations$0(AbstractBackendCollectionResourceTest.java:201) Actual invocation has different arguments: backend.runQuery(     GetAllDisksWithSnapshots,     QueryParametersBase:{refresh\u003d\u0027false\u0027, filtered\u003d\u0027false\u0027} ); -\u003e at org.ovirt.engine.api.restapi.resource.BackendResource.runQuery(BackendResource.java:82) ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testListCrashClientLocale",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected WebApplicationException",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testList",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003c3\u003e but was:\u003c0\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testListFailure",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected WebApplicationException",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testListCrash",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected WebApplicationException",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.api.restapi.resource.BackendDisksResourceTest",
+        "testMethod": "testListFailure",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: backend.runQuery(     Search,     \u003cSearch parameters equals\u003e ); -\u003e at org.ovirt.engine.api.restapi.resource.AbstractBackendCollectionResourceTest.lambda$setUpQueryExpectations$0(AbstractBackendCollectionResourceTest.java:201) Actual invocation has different arguments: backend.runQuery(     GetAllDisksWithSnapshots,     QueryParametersBase:{refresh\u003d\u0027false\u0027, filtered\u003d\u0027false\u0027} ); -\u003e at org.ovirt.engine.api.restapi.resource.BackendResource.runQuery(BackendResource.java:82) ",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 61,
+    "numberSourceFiles": 7767,
+    "numberTestFiles": 1256,
+    "numberLibrariesFailingModule": 194,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "b921e17ad5edb1e9896eac734f03723d14a7aac0",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/b921e17ad5edb1e9896eac734f03723d14a7aac0",
+      "date": "Sep 14, 2017 5:33:19 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "df738a19f1fe6979c771b23128de59b582cc5063",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/df738a19f1fe6979c771b23128de59b582cc5063",
+      "date": "Sep 14, 2017 6:36:55 PM"
+    }
+  }
+}
