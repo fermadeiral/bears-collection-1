@@ -1,0 +1,192 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 248433367,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/248433367",
+      "date": "Jun 29, 2017 6:32:00 PM"
+    },
+    "fixerBuild": {
+      "id": 248469925,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/248469925",
+      "date": "Jun 29, 2017 8:12:09 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 15, 2018 10:08:27 PM",
+    "reproductionDateEnd": "Dec 15, 2018 10:32:27 PM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 572658552,
+      "totalMemory": 2718957568
+    },
+    "totalDuration": 1432,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 140,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          140
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 506,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          3,
+          0,
+          1,
+          498
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 279,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          279
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/248433367/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 44,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 1207,
+      "numberDeleted": 131
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/248433367/frontend/webadmin/modules/uicommonweb",
+    "overallMetrics": {
+      "numberRunning": 7642,
+      "numberPassing": 7638,
+      "numberFailing": 0,
+      "numberErroring": 4,
+      "numberSkipping": 71,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 4
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.ui.uicommonweb.models.vms.instancetypes.ExistingInstanceTypeModelBehaviorTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.ui.uicommonweb.models.templates.TemplateVmModelBehaviorTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.ui.uicommonweb.models.vms.ExistingVmModelBehaviorTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.ui.uicommonweb.models.vms.NewTemplateVmModelBehaviorTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.ui.uicommonweb.models.vms.instancetypes.ExistingInstanceTypeModelBehaviorTest",
+        "testMethod": "testBuildModel",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.ui.uicommonweb.models.templates.TemplateVmModelBehaviorTest",
+        "testMethod": "testBuildModel",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.ui.uicommonweb.models.vms.ExistingVmModelBehaviorTest",
+        "testMethod": "testBuildModel",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.ui.uicommonweb.models.vms.NewTemplateVmModelBehaviorTest",
+        "testMethod": "testBuildModel",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7852,
+    "numberTestFiles": 1250,
+    "numberLibrariesFailingModule": 34,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "1733016ebf61d09b027beae53d32b59a20ee43b1",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/1733016ebf61d09b027beae53d32b59a20ee43b1",
+      "date": "Jun 29, 2017 6:07:12 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "4b5da7ee77385e559cd69a11a782f77c6c38a812",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/4b5da7ee77385e559cd69a11a782f77c6c38a812",
+      "date": "Jun 29, 2017 7:47:25 PM"
+    }
+  },
+  "type": "passing_passing"
+}
