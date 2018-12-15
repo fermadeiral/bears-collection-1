@@ -10,6 +10,7 @@ import javax.inject.Singleton;
 
 import org.apache.commons.lang.Validate;
 import org.ovirt.engine.core.bll.interfaces.BackendInternal;
+import org.ovirt.engine.core.bll.utils.GlusterEventFactory;
 import org.ovirt.engine.core.bll.utils.GlusterUtil;
 import org.ovirt.engine.core.common.AuditLogType;
 import org.ovirt.engine.core.common.action.VdcActionType;
@@ -30,10 +31,9 @@ import org.ovirt.engine.core.common.vdscommands.VdsIdVDSCommandParametersBase;
 import org.ovirt.engine.core.common.vdscommands.gluster.AddGlusterServerVDSParameters;
 import org.ovirt.engine.core.compat.Guid;
 import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogDirector;
-import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogableBase;
+import org.ovirt.engine.core.dal.dbbroker.auditloghandling.AuditLogable;
 import org.ovirt.engine.core.dao.VdsDao;
 import org.ovirt.engine.core.dao.gluster.GlusterServerDao;
-import org.ovirt.engine.core.di.Injector;
 import org.ovirt.engine.core.utils.lock.EngineLock;
 import org.ovirt.engine.core.vdsbroker.ResourceManager;
 import org.slf4j.Logger;
@@ -130,7 +130,7 @@ public class InitGlusterCommandHelper {
 
                 // If new server is not part of the existing gluster peers, add into peer group
                 if (upServer != null) {
-                    List<GlusterServerInfo> glusterServers = getGlusterPeers(upServer.getId());
+                    List<GlusterServerInfo> glusterServers = getGlusterPeers(upServer);
                     customLogValues.put("Server", upServer.getHostName());
                     if (glusterServers.size() == 0) {
                         customLogValues.put("Command", "gluster peer status");
@@ -154,7 +154,7 @@ public class InitGlusterCommandHelper {
                                 //there's no other up server. so there's no issue with peer status results
                                 return true;
                             }
-                            List<GlusterServerInfo> newGlusterServers = getGlusterPeers(newUpServer.getId());
+                            List<GlusterServerInfo> newGlusterServers = getGlusterPeers(newUpServer);
                             if (!glusterUtil.isHostExists(newGlusterServers, vds)) {
                                 log.info("Failed to find host '{}' in gluster peer list from '{}' on attempt {}",
                                         vds, newUpServer, ++retries);
@@ -219,14 +219,12 @@ public class InitGlusterCommandHelper {
     }
 
     @SuppressWarnings("unchecked")
-    private List<GlusterServerInfo> getGlusterPeers(Guid upServerId) {
+    private List<GlusterServerInfo> getGlusterPeers(VDS upServer) {
         List<GlusterServerInfo> glusterServers = new ArrayList<>();
         VDSReturnValue returnValue = runVdsCommand(VDSCommandType.GlusterServersList,
-                        new VdsIdVDSCommandParametersBase(upServerId));
+                        new VdsIdVDSCommandParametersBase(upServer.getId()));
         if (!returnValue.getSucceeded()) {
-            AuditLogableBase logable = Injector.injectMembers(new AuditLogableBase(upServerId));
-            logable.addCustomValue("ErrorMessage", returnValue.getVdsError().getMessage());
-            logable.updateCallStackFromThrowable(returnValue.getExceptionObject());
+            AuditLogable logable = GlusterEventFactory.createEvent(upServer, returnValue);
             auditLogDirector.log(logable, AuditLogType.GLUSTER_SERVERS_LIST_FAILED);
         } else {
             glusterServers = (List<GlusterServerInfo>) returnValue.getReturnValue();
@@ -239,9 +237,7 @@ public class InitGlusterCommandHelper {
             VDSReturnValue returnValue = runVdsCommand(VDSCommandType.AddGlusterServer,
                     new AddGlusterServerVDSParameters(upServerId, newServerName));
             if (!returnValue.getSucceeded()) {
-                AuditLogableBase logable = Injector.injectMembers(new AuditLogableBase(vds.getId()));
-                logable.addCustomValue("ErrorMessage", returnValue.getVdsError().getMessage());
-                logable.updateCallStackFromThrowable(returnValue.getExceptionObject());
+                AuditLogable logable = GlusterEventFactory.createEvent(vds, returnValue);
                 auditLogDirector.log(logable, AuditLogType.GLUSTER_SERVER_ADD_FAILED);
             }
             return returnValue.getSucceeded();
