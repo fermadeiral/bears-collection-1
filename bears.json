@@ -1,0 +1,192 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 206552967,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/206552967",
+      "date": "Mar 1, 2017 2:46:53 PM"
+    },
+    "fixerBuild": {
+      "id": 206553093,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/206553093",
+      "date": "Mar 1, 2017 2:48:19 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 4:21:03 AM",
+    "reproductionDateEnd": "Dec 16, 2018 4:44:28 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2146381544,
+      "totalMemory": 2633498624
+    },
+    "totalDuration": 1397,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 137,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          137
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 521,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          3,
+          0,
+          1,
+          512
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 157,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          157
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/206552967/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 2,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 15,
+      "numberDeleted": 16
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/206552967/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4948,
+      "numberPassing": 4940,
+      "numberFailing": 0,
+      "numberErroring": 8,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 8
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "numberRunning": 8,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 8,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testCreateTasksStartedFromCLIWithErrors",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testUpdateWhenNoTasks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "cleanOrphanTasksWhenNoVolume",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "cleanOrphanTasks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testUpdateWhenNoCompletedTasks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "updateTasksInCluster",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testUpdateWhenAbortedTasks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testCreateTasksStartedFromCLI",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 57,
+    "numberSourceFiles": 7732,
+    "numberTestFiles": 1224,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "e303522dfe27c273edf55b6a905822f562a2022e",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/e303522dfe27c273edf55b6a905822f562a2022e",
+      "date": "Mar 1, 2017 11:16:11 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "3095d24ee5745743cf489581ee7fda1dd0a4fe79",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/3095d24ee5745743cf489581ee7fda1dd0a4fe79",
+      "date": "Mar 1, 2017 11:16:11 AM"
+    }
+  },
+  "type": "passing_passing"
+}
