@@ -1,0 +1,151 @@
+{
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 190183181,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/190183181",
+      "date": "Jan 9, 2017 10:22:52 AM"
+    },
+    "fixerBuild": {
+      "id": 190195972,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/190195972",
+      "date": "Jan 9, 2017 11:09:51 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 7:57:54 AM",
+    "reproductionDateEnd": "Dec 16, 2018 8:19:51 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1553984824,
+      "totalMemory": 2936537088
+    },
+    "totalDuration": 1308,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 136,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          136
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 505,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          2,
+          0,
+          1,
+          497
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 108,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          108
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/190183181/pom.xml"
+  },
+  "version": "Bears 1.0",
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 3,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 5,
+      "numberDeleted": 26
+    }
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "b70f9eae742eaf8f7b64d4f9d20574d78e612ce8",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/b70f9eae742eaf8f7b64d4f9d20574d78e612ce8",
+      "date": "Jan 9, 2017 9:56:25 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "23346dac93b4c2ab07d7e3a3b398ace86fd88269",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/23346dac93b4c2ab07d7e3a3b398ace86fd88269",
+      "date": "Jan 9, 2017 10:45:03 AM"
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/190183181/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4805,
+      "numberPassing": 4804,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.scheduling.policyunits.EvenDistributionBalancePolicyUnitTest",
+        "numberRunning": 5,
+        "numberPassing": 4,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.scheduling.policyunits.EvenDistributionBalancePolicyUnitTest",
+        "testMethod": "testBalanceCpuLoad",
+        "failureName": "java.lang.AssertionError",
+        "detail": "expected:\u003c2\u003e but was:\u003c1\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 56,
+    "numberSourceFiles": 7673,
+    "numberTestFiles": 1214,
+    "numberLibrariesFailingModule": 187,
+    "numberLines": 0
+  },
+  "type": "passing_passing"
+}
