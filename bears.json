@@ -1,0 +1,256 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 192685405,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/192685405",
+      "date": "Jan 17, 2017 3:13:31 PM"
+    },
+    "fixerBuild": {
+      "id": 192694787,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/192694787",
+      "date": "Jan 17, 2017 3:52:39 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 7:05:45 AM",
+    "reproductionDateEnd": "Dec 16, 2018 7:25:48 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2154493696,
+      "totalMemory": 2647130112
+    },
+    "totalDuration": 1194,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 134,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          134
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 519,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          6,
+          2,
+          0,
+          1,
+          510
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 54,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          54
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/192685405/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 7,
+      "numberDeleted": 1
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/192685405/backend/manager/modules/searchbackend",
+    "overallMetrics": {
+      "numberRunning": 1846,
+      "numberPassing": 1830,
+      "numberFailing": 16,
+      "numberErroring": 0,
+      "numberSkipping": 4,
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "isError": false,
+          "occurrences": 16
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "numberRunning": 39,
+        "numberPassing": 23,
+        "numberFailing": 16,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testCluster",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...s_view.id    WHERE  [(storage_domains_with_hosts_view.storage_name IS NULL OR storage_domains_with_hosts_view.storage_name LIKE 111)] ))  ORDER BY name A...\u003e but was:\u003c...s_view.id    WHERE  [storage_domains_with_hosts_view.storage_name LIKE 111] ))  ORDER BY name A...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testVms",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...s_view.id    WHERE  [(storage_domains_with_hosts_view.storage_name IS NULL OR storage_domains_with_hosts_view.storage_name LIKE 111)] ))  ORDER BY vm_nam...\u003e but was:\u003c...s_view.id    WHERE  [storage_domains_with_hosts_view.storage_name LIKE 111] ))  ORDER BY vm_nam...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testUser",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...gs.vds_id    WHERE  [(vds_with_tags.vds_name IS NULL OR vds_with_tags.vds_name LIKE host1)] ))  ORDER BY name A...\u003e but was:\u003c...gs.vds_id    WHERE  [vds_with_tags.vds_name LIKE host1] ))  ORDER BY name A...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testVm",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...s.vm_guid    WHERE  [(vdc_users_with_tags.name IS NULL OR vdc_users_with_tags.name LIKE user1)] )  ORDER BY vm_name...\u003e but was:\u003c...s.vm_guid    WHERE  [vdc_users_with_tags.name LIKE user1] )  ORDER BY vm_name...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testHost",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c... FROM  vds   WHERE  [(vds.vds_name IS NULL OR vds.vds_name LIKE test1)] )  ORDER BY usage_c...\u003e but was:\u003c... FROM  vds   WHERE  [vds.vds_name LIKE test1] )  ORDER BY usage_c...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testDisk",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c... all_disks   WHERE  [(all_disks.disk_alias IS NULL OR all_disks.disk_alias LIKE vm1)] )  ORDER BY disk_al...\u003e but was:\u003c... all_disks   WHERE  [all_disks.disk_alias LIKE vm1] )  ORDER BY disk_al...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testTemplate",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...gs.vds_id    WHERE  [(vds_with_tags.vds_name IS NULL OR vds_with_tags.vds_name LIKE fake1)] )  ORDER BY name AS...\u003e but was:\u003c...gs.vds_id    WHERE  [vds_with_tags.vds_name LIKE fake1] )  ORDER BY name AS...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testEvent",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...gs.vds_id    WHERE  [(vds_with_tags.vds_name IS NULL OR vds_with_tags.vds_name LIKE host1)]  AND not deleted)  ...\u003e but was:\u003c...gs.vds_id    WHERE  [vds_with_tags.vds_name LIKE host1]  AND not deleted)  ...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testProvider",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c... providers   WHERE  [(providers.name IS NULL OR providers.name LIKE prov1)] )  ORDER BY name AS...\u003e but was:\u003c... providers   WHERE  [providers.name LIKE prov1] )  ORDER BY name AS...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testNetwork",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...work_id    WHERE (  [(network_cluster_view.network_name IS NULL OR network_cluster_view.network_name LIKE cluster1)  AND  (network_view.name IS NULL OR network_view.name LIKE network1)]  ))  ORDER BY stora...\u003e but was:\u003c...work_id    WHERE (  [network_cluster_view.network_name LIKE cluster1  AND  network_view.name LIKE network1]  ))  ORDER BY stora...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testGroup",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c... ad_groups   WHERE  [(ad_groups.name IS NULL OR ad_groups.name LIKE group1)] )  ORDER BY name AS...\u003e but was:\u003c... ad_groups   WHERE  [ad_groups.name LIKE group1] )  ORDER BY name AS...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testStorage",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...torage_id    WHERE  [(vds_with_tags.vds_name IS NULL OR vds_with_tags.vds_name LIKE fake1)] )  ORDER BY storage...\u003e but was:\u003c...torage_id    WHERE  [vds_with_tags.vds_name LIKE fake1] )  ORDER BY storage...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testDatacenter",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...e_pool_id    WHERE  [(cluster_storage_domain.name IS NULL OR cluster_storage_domain.name LIKE Default)] )  ORDER BY name AS...\u003e but was:\u003c...e_pool_id    WHERE  [cluster_storage_domain.name LIKE Default] )  ORDER BY name AS...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testQuota",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...quota_view   WHERE  [(quota_view.storage_pool_name IS NULL OR quota_view.storage_pool_name LIKE pool)] )  ORDER BY quota_n...\u003e but was:\u003c...quota_view   WHERE  [quota_view.storage_pool_name LIKE pool] )  ORDER BY quota_n...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testTemplateUsersUserName",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...s.vm_guid    WHERE  [(vdc_users_with_tags.username IS NULL OR vdc_users_with_tags.username LIKE %)] )  ORDER BY name AS...\u003e but was:\u003c...s.vm_guid    WHERE  [vdc_users_with_tags.username LIKE %] )  ORDER BY name AS...\u003e",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testVolume",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...lumes_view   WHERE  [(gluster_volumes_view.vol_name IS NULL OR gluster_volumes_view.vol_name LIKE volume1)] )  ORDER BY vol_nam...\u003e but was:\u003c...lumes_view   WHERE  [gluster_volumes_view.vol_name LIKE volume1] )  ORDER BY vol_nam...\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 56,
+    "numberSourceFiles": 7697,
+    "numberTestFiles": 1218,
+    "numberLibrariesFailingModule": 145,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "38482b4df3c529e265e2d2cdf6e397ec9a72e380",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/38482b4df3c529e265e2d2cdf6e397ec9a72e380",
+      "date": "Jan 17, 2017 2:47:25 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "26a2d5897d10f66f06df98a1c70abd8ecbb620a2",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/26a2d5897d10f66f06df98a1c70abd8ecbb620a2",
+      "date": "Jan 17, 2017 3:19:29 PM"
+    }
+  }
+}
