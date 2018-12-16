@@ -1,0 +1,151 @@
+{
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 197105250,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/197105250",
+      "date": "Jan 31, 2017 11:01:47 PM"
+    },
+    "fixerBuild": {
+      "id": 197223122,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/197223122",
+      "date": "Feb 1, 2017 9:34:21 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 6:22:24 AM",
+    "reproductionDateEnd": "Dec 16, 2018 6:45:42 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1593807120,
+      "totalMemory": 2252865536
+    },
+    "totalDuration": 1389,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 135,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          135
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 631,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          2,
+          0,
+          2,
+          622
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 72,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          72
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/197105250/pom.xml"
+  },
+  "version": "Bears 1.0",
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 4,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 20,
+      "numberDeleted": 63
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/197105250/backend/manager/modules/searchbackend",
+    "overallMetrics": {
+      "numberRunning": 1864,
+      "numberPassing": 1863,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 4,
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "numberRunning": 39,
+        "numberPassing": 38,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.searchbackend.SyntaxCheckerTest",
+        "testMethod": "testDatacenter",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003c...ol  )  ORDER BY name[ ASC NULLS FIRST]) as T1 OFFSET (1 -1...\u003e but was:\u003c...ol  )  ORDER BY name[,name ASC ]) as T1 OFFSET (1 -1...\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 56,
+    "numberSourceFiles": 7701,
+    "numberTestFiles": 1221,
+    "numberLibrariesFailingModule": 148,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "a44d7fd76fe8b24f68c3e585937d9f04ea31d1ba",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/a44d7fd76fe8b24f68c3e585937d9f04ea31d1ba",
+      "date": "Jan 31, 2017 10:32:01 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "8c427859ed318435d14e061a1273ec0d9e271ba4",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/8c427859ed318435d14e061a1273ec0d9e271ba4",
+      "date": "Feb 1, 2017 9:07:14 AM"
+    }
+  },
+  "type": "passing_passing"
+}
