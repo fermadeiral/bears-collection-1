@@ -1,0 +1,150 @@
+{
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 206670237,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/206670237",
+      "date": "Mar 1, 2017 6:05:21 PM"
+    },
+    "fixerBuild": {
+      "id": 206671294,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/206671294",
+      "date": "Mar 1, 2017 6:23:47 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 3:41:57 AM",
+    "reproductionDateEnd": "Dec 16, 2018 4:06:00 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 849652392,
+      "totalMemory": 2215641088
+    },
+    "totalDuration": 1435,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 141,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          141
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 518,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          2,
+          0,
+          1,
+          510
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 161,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          161
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/206670237/pom.xml"
+  },
+  "version": "Bears 1.0",
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 3,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 38,
+      "numberDeleted": 11
+    }
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "7751cc6b967ad79d79234a84b6126b9b86070267",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/7751cc6b967ad79d79234a84b6126b9b86070267",
+      "date": "Mar 1, 2017 5:36:53 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "816fabbc708dbc5add9ec939630a0a8dcb559233",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/816fabbc708dbc5add9ec939630a0a8dcb559233",
+      "date": "Mar 1, 2017 5:39:44 PM"
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/206670237/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4949,
+      "numberPassing": 4948,
+      "numberFailing": 0,
+      "numberErroring": 1,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.ovfstore.OvfDataUpdaterTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.ovfstore.OvfDataUpdaterTest",
+        "testMethod": "poolUpdateOvfStoreOnAnyDomainSupported",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 57,
+    "numberSourceFiles": 7737,
+    "numberTestFiles": 1224,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "type": "passing_passing"
+}
