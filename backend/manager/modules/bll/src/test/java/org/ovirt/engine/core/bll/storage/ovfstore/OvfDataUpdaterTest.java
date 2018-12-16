@@ -4,7 +4,6 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.spy;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,7 +14,9 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.ovirt.engine.core.common.action.VdcReturnValueBase;
 import org.ovirt.engine.core.common.businessentities.StoragePool;
@@ -25,6 +26,8 @@ import org.ovirt.engine.core.dao.StoragePoolDao;
 
 @RunWith(MockitoJUnitRunner.class)
 public class OvfDataUpdaterTest {
+    @InjectMocks
+    @Spy
     private OvfDataUpdater ovfDataUpdater;
     private Map<Guid, Map<Guid, Boolean>> map;
 
@@ -33,9 +36,7 @@ public class OvfDataUpdaterTest {
 
     @Before
     public void setUp() {
-        ovfDataUpdater = spy(OvfDataUpdater.getInstance());
         map = new HashMap<>();
-        doReturn(storagePoolDao).when(ovfDataUpdater).getStoragePoolDao();
         mockAnswers();
 
         StoragePool pool1 = new StoragePool();
