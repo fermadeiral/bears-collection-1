@@ -1,0 +1,97 @@
+[INFO] Scanning for projects...
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/3.0.3/findbugs-maven-plugin-3.0.3.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/3.0.3/findbugs-maven-plugin-3.0.3.pom (22 KB at 120.6 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/mojo/mojo-parent/35/mojo-parent-35.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/mojo/mojo-parent/35/mojo-parent-35.pom (25 KB at 540.4 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/3.0.3/findbugs-maven-plugin-3.0.3.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/3.0.3/findbugs-maven-plugin-3.0.3.jar (142 KB at 2249.4 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.pom (4 KB at 75.0 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.5/maven-clean-plugin-2.5.jar (25 KB at 375.9 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.1/maven-deploy-plugin-2.8.1.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.1/maven-deploy-plugin-2.8.1.pom (8 KB at 97.0 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.1/maven-deploy-plugin-2.8.1.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.1/maven-deploy-plugin-2.8.1.jar (34 KB at 719.4 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.3/maven-site-plugin-3.3.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.3/maven-site-plugin-3.3.pom (21 KB at 580.7 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.3/maven-site-plugin-3.3.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.3/maven-site-plugin-3.3.jar (122 KB at 2824.2 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.3/maven-antrun-plugin-1.3.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.3/maven-antrun-plugin-1.3.pom (5 KB at 128.3 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/12/maven-plugins-12.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/12/maven-plugins-12.pom (12 KB at 327.8 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.3/maven-antrun-plugin-1.3.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.3/maven-antrun-plugin-1.3.jar (24 KB at 622.2 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/2.2-beta-5/maven-assembly-plugin-2.2-beta-5.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/2.2-beta-5/maven-assembly-plugin-2.2-beta-5.pom (15 KB at 400.1 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/16/maven-plugins-16.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/16/maven-plugins-16.pom (13 KB at 324.2 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/2.2-beta-5/maven-assembly-plugin-2.2-beta-5.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-assembly-plugin/2.2-beta-5/maven-assembly-plugin-2.2-beta-5.jar (204 KB at 2719.6 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.pom (12 KB at 238.0 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/2.8/maven-dependency-plugin-2.8.jar (150 KB at 2991.9 KB/sec)
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Backend Logic @Service bean 4.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:build-classpath (default-cli) @ bll ---
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.pom (5 KB at 111.5 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.pom (6 KB at 168.5 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.3/plexus-archiver-2.3.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.3/plexus-archiver-2.3.pom (4 KB at 99.7 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.6/plexus-io-2.0.6.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.6/plexus-io-2.0.6.pom (3 KB at 65.4 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.9/plexus-utils-3.0.9.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.9/plexus-utils-3.0.9.pom (4 KB at 90.2 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/1.4/maven-dependency-analyzer-1.4.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/1.4/maven-dependency-analyzer-1.4.pom (6 KB at 148.0 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/asm/asm/3.3.1/asm-3.3.1.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/asm/asm/3.3.1/asm-3.3.1.pom (266 B at 6.3 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/asm/asm-parent/3.3.1/asm-parent-3.3.1.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/asm/asm-parent/3.3.1/asm-parent-3.3.1.pom (5 KB at 128.2 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.1/maven-dependency-tree-2.1.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.1/maven-dependency-tree-2.1.pom (7 KB at 195.0 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.pom (3 KB at 71.3 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.pom (3 KB at 60.6 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.pom (4 KB at 86.6 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.pom (2 KB at 44.6 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.pom (2 KB at 57.1 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-invoker/2.0.11/maven-invoker-2.0.11.pom
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-invoker/2.0.11/maven-invoker-2.0.11.pom (5 KB at 133.9 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.jar
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.9/plexus-utils-3.0.9.jar
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.jar
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.6/plexus-io-2.0.6.jar
+[INFO] Downloading: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.3/plexus-archiver-2.3.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.3/plexus-archiver-2.3.jar (183 KB at 3716.3 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/1.4/maven-dependency-analyzer-1.4.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-doxia-tools/1.0.2/maven-doxia-tools-1.0.2.jar (41 KB at 501.5 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/asm/asm/3.3.1/asm-3.3.1.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-impl/2.0.5/maven-reporting-impl-2.0.5.jar (21 KB at 221.2 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.1/maven-dependency-tree-2.1.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/1.4/maven-dependency-analyzer-1.4.jar (27 KB at 294.4 KB/sec)
+[INFO] Downloading: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-invoker/2.0.11/maven-invoker-2.0.11.jar
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.6/plexus-io-2.0.6.jar (57 KB at 580.6 KB/sec)
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.9/plexus-utils-3.0.9.jar (227 KB at 1919.5 KB/sec)
+[INFO] Downloaded: http://repo1.maven.org/maven2/asm/asm/3.3.1/asm-3.3.1.jar (43 KB at 276.4 KB/sec)
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.1/maven-dependency-tree-2.1.jar (59 KB at 357.0 KB/sec)
+[INFO] Downloaded: http://repo1.maven.org/maven2/org/apache/maven/shared/maven-invoker/2.0.11/maven-invoker-2.0.11.jar (29 KB at 169.1 KB/sec)
+[INFO] Wrote classpath file '/root/workspace/oVirt/ovirt-engine/206552967/backend/manager/modules/bll/classpath.info'.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.609 s
+[INFO] Finished at: 2018-12-16T04:35:11+01:00
+[INFO] Final Memory: 25M/596M
+[INFO] ------------------------------------------------------------------------
