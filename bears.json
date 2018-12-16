@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 215845753,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/215845753",
+      "date": "Mar 28, 2017 10:46:01 AM"
+    },
+    "fixerBuild": {
+      "id": 215860614,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/215860614",
+      "date": "Mar 28, 2017 11:35:54 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 2:42:28 AM",
+    "reproductionDateEnd": "Dec 16, 2018 3:03:48 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1916455736,
+      "totalMemory": 2626682880
+    },
+    "totalDuration": 1270,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 139,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          139
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 484,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          3,
+          0,
+          1,
+          475
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 164,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          164
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/215845753/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 7,
+      "numberDeleted": 6
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/215845753/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4983,
+      "numberPassing": 4982,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.RunVmCommandTest",
+        "numberRunning": 30,
+        "numberPassing": 29,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.RunVmCommandTest",
+        "testMethod": "testFindBestMatchForEmulateMachineKeepsCurrent",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003cpc-i440fx-[rhel7.3.0]\u003e but was:\u003cpc-i440fx-[2.1]\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 58,
+    "numberSourceFiles": 7746,
+    "numberTestFiles": 1228,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "e451ae3e8823d4a57b420b6421f4a742f38c2a37",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/e451ae3e8823d4a57b420b6421f4a742f38c2a37",
+      "date": "Mar 28, 2017 10:02:14 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "13dee6e4dfbb2813c5398e4fecba38454b3ba891",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/13dee6e4dfbb2813c5398e4fecba38454b3ba891",
+      "date": "Mar 28, 2017 10:39:55 AM"
+    }
+  },
+  "type": "passing_passing"
+}
