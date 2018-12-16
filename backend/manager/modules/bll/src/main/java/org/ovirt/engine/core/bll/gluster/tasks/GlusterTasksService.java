@@ -4,24 +4,34 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ovirt.engine.core.bll.Backend;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import org.ovirt.engine.core.bll.utils.GlusterUtil;
 import org.ovirt.engine.core.common.asynctasks.gluster.GlusterAsyncTask;
 import org.ovirt.engine.core.common.businessentities.VDS;
 import org.ovirt.engine.core.common.errors.EngineError;
 import org.ovirt.engine.core.common.errors.EngineException;
+import org.ovirt.engine.core.common.interfaces.VDSBrokerFrontend;
 import org.ovirt.engine.core.common.job.ExternalSystemType;
 import org.ovirt.engine.core.common.vdscommands.VDSCommandType;
 import org.ovirt.engine.core.common.vdscommands.VDSParametersBase;
 import org.ovirt.engine.core.common.vdscommands.VDSReturnValue;
 import org.ovirt.engine.core.common.vdscommands.VdsIdVDSCommandParametersBase;
 import org.ovirt.engine.core.compat.Guid;
-import org.ovirt.engine.core.dal.dbbroker.DbFacade;
+import org.ovirt.engine.core.dao.StepDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Singleton
 public class GlusterTasksService {
     private static final Logger log = LoggerFactory.getLogger(GlusterTasksService.class);
+
+    @Inject
+    private StepDao stepDao;
+
+    @Inject
+    private VDSBrokerFrontend vdsBrokerFrontend;
 
     public Map<Guid, GlusterAsyncTask> getTaskListForCluster(Guid id) {
         VDS upServer = GlusterUtil.getInstance().getRandomUpServer(id);
@@ -48,13 +58,11 @@ public class GlusterTasksService {
      * Gets the list of stored tasks in database where the job is not ended
      */
     public List<Guid> getMonitoredTaskIDsInDB() {
-      List<Guid> externalIds = DbFacade.getInstance().getStepDao().
-                getExternalIdsForRunningSteps(ExternalSystemType.GLUSTER);
-        return externalIds;
+        return stepDao.getExternalIdsForRunningSteps(ExternalSystemType.GLUSTER);
     }
 
     private VDSReturnValue runVdsCommand(VDSCommandType commandType, VDSParametersBase params) {
-        return Backend.getInstance().getResourceManager().runVdsCommand(commandType, params);
+        return vdsBrokerFrontend.runVdsCommand(commandType, params);
     }
 
 }
