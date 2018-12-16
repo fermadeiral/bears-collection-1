@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 188279663,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/188279663",
+      "date": "Jan 2, 2017 5:47:06 PM"
+    },
+    "fixerBuild": {
+      "id": 188283103,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/188283103",
+      "date": "Jan 2, 2017 6:01:12 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 8:04:38 AM",
+    "reproductionDateEnd": "Dec 16, 2018 8:27:00 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1454923768,
+      "totalMemory": 2356674560
+    },
+    "totalDuration": 1334,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 133,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          133
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 554,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          3,
+          0,
+          1,
+          545
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 117,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          117
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/188279663/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 131,
+      "numberDeleted": 32
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/188279663/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4798,
+      "numberPassing": 4797,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.scheduling.arem.AffinityRulesEnforcerTest",
+        "numberRunning": 10,
+        "numberPassing": 9,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.scheduling.arem.AffinityRulesEnforcerTest",
+        "testMethod": "shouldFixVmWithMostViolationsFirst",
+        "failureName": "org.junit.ComparisonFailure",
+        "detail": "expected:\u003cVM [vm[4]]\u003e but was:\u003cVM [vm[1]]\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 56,
+    "numberSourceFiles": 7661,
+    "numberTestFiles": 1211,
+    "numberLibrariesFailingModule": 187,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "4ff450f12e4c8f49e1a4e51da1b9fccc9cda46f9",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/4ff450f12e4c8f49e1a4e51da1b9fccc9cda46f9",
+      "date": "Jan 2, 2017 5:22:01 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "63a9f1e5e25d47f11ffe9ad9020a3470f0a4d019",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/63a9f1e5e25d47f11ffe9ad9020a3470f0a4d019",
+      "date": "Jan 2, 2017 5:36:02 PM"
+    }
+  }
+}
