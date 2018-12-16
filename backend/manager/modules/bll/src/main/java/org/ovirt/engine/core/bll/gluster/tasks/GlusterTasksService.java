@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Singleton;
+
 import org.ovirt.engine.core.bll.Backend;
 import org.ovirt.engine.core.bll.utils.GlusterUtil;
 import org.ovirt.engine.core.common.asynctasks.gluster.GlusterAsyncTask;
@@ -20,6 +22,7 @@ import org.ovirt.engine.core.dal.dbbroker.DbFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Singleton
 public class GlusterTasksService {
     private static final Logger log = LoggerFactory.getLogger(GlusterTasksService.class);
 
@@ -44,18 +47,11 @@ public class GlusterTasksService {
         }
     }
 
-    public GlusterAsyncTask getTask(Guid taskId) {
-        //Get the cluster associated with task and see if host is UP
-        return null;
-    }
-
     /**
      * Gets the list of stored tasks in database where the job is not ended
      */
     public List<Guid> getMonitoredTaskIDsInDB() {
-      List<Guid> externalIds = DbFacade.getInstance().getStepDao().
-                getExternalIdsForRunningSteps(ExternalSystemType.GLUSTER);
-        return externalIds;
+        return DbFacade.getInstance().getStepDao().getExternalIdsForRunningSteps(ExternalSystemType.GLUSTER);
     }
 
     private VDSReturnValue runVdsCommand(VDSCommandType commandType, VDSParametersBase params) {
