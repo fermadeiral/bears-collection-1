@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 230077306,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/230077306",
+      "date": "May 8, 2017 9:20:52 PM"
+    },
+    "fixerBuild": {
+      "id": 230157382,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/230157382",
+      "date": "May 9, 2017 1:41:13 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 12:59:54 AM",
+    "reproductionDateEnd": "Dec 16, 2018 1:21:49 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1797693672,
+      "totalMemory": 2563244032
+    },
+    "totalDuration": 1307,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 138,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          138
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 490,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          0,
+          1,
+          483
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 163,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          163
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/230077306/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 1,
+      "numberDeleted": 1
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/230077306/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4983,
+      "numberPassing": 4982,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.image.ImagesHandlerTest",
+        "numberRunning": 9,
+        "numberPassing": 8,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.image.ImagesHandlerTest",
+        "testMethod": "testDetermineTotalImageInitialSizeFromNfsToCow",
+        "failureName": "java.lang.AssertionError",
+        "detail": "Total Initial Size should be 0 expected:\u003c0\u003e but was:\u003c5000\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7762,
+    "numberTestFiles": 1229,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "420bcebebeed02dff2e02aba8ba859df6b2267e8",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/420bcebebeed02dff2e02aba8ba859df6b2267e8",
+      "date": "May 8, 2017 8:56:36 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "541c6a8a857d662666a1dec05b89a3f37dcb1c32",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/541c6a8a857d662666a1dec05b89a3f37dcb1c32",
+      "date": "May 9, 2017 1:17:19 AM"
+    }
+  },
+  "type": "passing_passing"
+}
