@@ -1,0 +1,165 @@
+{
+  "version": "Bears 1.0",
+  "type": "passing_passing",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 228227765,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/228227765",
+      "date": "May 3, 2017 9:22:21 AM"
+    },
+    "fixerBuild": {
+      "id": 228234680,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/228234680",
+      "date": "May 3, 2017 9:52:59 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 1:22:37 AM",
+    "reproductionDateEnd": "Dec 16, 2018 1:44:22 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 493973160,
+      "totalMemory": 2016411648
+    },
+    "totalDuration": 1296,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 140,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          140
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 504,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          7,
+          2,
+          0,
+          1,
+          494
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 159,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          159
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/228227765/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 2,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 39,
+      "numberDeleted": 11
+    }
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "c1ee0753624939dcc14ba1741b5390f48eb0c093",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/c1ee0753624939dcc14ba1741b5390f48eb0c093",
+      "date": "May 3, 2017 8:58:40 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "dab27aa9d7d4f7aa1e9f2056ea5e1e72158d7453",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/dab27aa9d7d4f7aa1e9f2056ea5e1e72158d7453",
+      "date": "May 3, 2017 9:29:25 AM"
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/228227765/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4983,
+      "numberPassing": 4980,
+      "numberFailing": 3,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "Argument(s) are different! Wanted",
+          "isError": false,
+          "occurrences": 3
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.NetworkConfiguratorTest",
+        "numberRunning": 11,
+        "numberPassing": 8,
+        "numberFailing": 3,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.NetworkConfiguratorTest",
+        "testMethod": "testCreateManagementNetworkIfRequiredFailsOnDifferentVlanId",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: auditLogDirector.log(     \u003cCapturing argument\u003e,     VLAN_ID_MISMATCH_FOR_MANAGEMENT_NETWORK_CONFIGURATION ); -\u003e at org.ovirt.engine.core.bll.network.NetworkConfiguratorTest.verifyAuditLoggableBaseFilledProperly(NetworkConfiguratorTest.java:224) Actual invocation has different arguments: auditLogDirector.log(     AuditLogableImpl:{vmId\u003d\u002700000000-0000-0000-0000-000000000000\u0027, vmName\u003d\u0027null\u0027, userId\u003d\u002700000000-0000-0000-0000-000000000000\u0027, userName\u003d\u0027null\u0027, vdsId\u003d\u0027null\u0027, vdsName\u003d\u0027host name\u0027, vmTemplateId\u003d\u0027null\u0027, vmTemplateName\u003d\u0027null\u0027, clusterId\u003d\u0027null\u0027, clusterName\u003d\u0027null\u0027, storagePoolId\u003d\u0027null\u0027, storagePoolName\u003d\u0027null\u0027, storageDomainId\u003d\u0027null\u0027, storageDomainName\u003d\u0027null\u0027, glusterVolumeName\u003d\u0027null\u0027, glusterVolumeId\u003d\u0027null\u0027, quotaIdForLog\u003d\u0027null\u0027, quotaNameForLog\u003d\u0027null\u0027, quotaEnforcementType\u003d\u0027null\u0027, jobId\u003d\u0027null\u0027, brickId\u003d\u0027null\u0027, brickPath\u003d\u0027null\u0027, reason\u003d\u0027null\u0027, repeatable\u003d\u0027false\u0027, customValues\u003d\u0027[mgmtvlanid\u003d777, vlanid\u003d666, interfacename\u003dnic name]\u0027, correlationId\u003d\u0027null\u0027, customId\u003d\u0027null\u0027, origin\u003d\u0027oVirt\u0027, customEventId\u003d\u0027-1\u0027, eventFloodInSec\u003d\u00270\u0027, customData\u003d\u0027\u0027, external\u003d\u0027false\u0027, callStack\u003d\u0027null\u0027},     VLAN_ID_MISMATCH_FOR_MANAGEMENT_NETWORK_CONFIGURATION,     \"Failed to configure management network: {0}\" ); -\u003e at org.ovirt.engine.core.bll.network.NetworkConfigurator.findNicToSetupManagementNetwork(NetworkConfigurator.java:182) ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.NetworkConfiguratorTest",
+        "testMethod": "testCreateManagementNetworkIfRequiredFailedOnSetupNetworks",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: auditLogDirector.log(     \u003cCapturing argument\u003e,     SETUP_NETWORK_FAILED_FOR_MANAGEMENT_NETWORK_CONFIGURATION ); -\u003e at org.ovirt.engine.core.bll.network.NetworkConfiguratorTest.verifyAuditLoggableBaseFilledProperly(NetworkConfiguratorTest.java:224) Actual invocation has different arguments: auditLogDirector.log(     AuditLogableImpl:{vmId\u003d\u002700000000-0000-0000-0000-000000000000\u0027, vmName\u003d\u0027null\u0027, userId\u003d\u002700000000-0000-0000-0000-000000000000\u0027, userName\u003d\u0027null\u0027, vdsId\u003d\u0027null\u0027, vdsName\u003d\u0027host name\u0027, vmTemplateId\u003d\u0027null\u0027, vmTemplateName\u003d\u0027null\u0027, clusterId\u003d\u0027null\u0027, clusterName\u003d\u0027null\u0027, storagePoolId\u003d\u0027null\u0027, storagePoolName\u003d\u0027null\u0027, storageDomainId\u003d\u0027null\u0027, storageDomainName\u003d\u0027null\u0027, glusterVolumeName\u003d\u0027null\u0027, glusterVolumeId\u003d\u0027null\u0027, quotaIdForLog\u003d\u0027null\u0027, quotaNameForLog\u003d\u0027null\u0027, quotaEnforcementType\u003d\u0027null\u0027, jobId\u003d\u0027null\u0027, brickId\u003d\u0027null\u0027, brickPath\u003d\u0027null\u0027, reason\u003d\u0027null\u0027, repeatable\u003d\u0027false\u0027, customValues\u003d\u0027[]\u0027, correlationId\u003d\u0027null\u0027, customId\u003d\u0027null\u0027, origin\u003d\u0027oVirt\u0027, customEventId\u003d\u0027-1\u0027, eventFloodInSec\u003d\u00270\u0027, customData\u003d\u0027\u0027, external\u003d\u0027false\u0027, callStack\u003d\u0027null\u0027},     SETUP_NETWORK_FAILED_FOR_MANAGEMENT_NETWORK_CONFIGURATION,     \"Failed to configure management network: {0}\" ); -\u003e at org.ovirt.engine.core.bll.network.NetworkConfigurator.configureManagementNetwork(NetworkConfigurator.java:253) ",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.network.NetworkConfiguratorTest",
+        "testMethod": "testCreateManagementNetworkIfRequiredFailedOnCommitNetworkChanges",
+        "failureName": "Argument(s) are different! Wanted",
+        "detail": " Argument(s) are different! Wanted: auditLogDirector.log(     \u003cCapturing argument\u003e,     PERSIST_NETWORK_FAILED_FOR_MANAGEMENT_NETWORK ); -\u003e at org.ovirt.engine.core.bll.network.NetworkConfiguratorTest.verifyAuditLoggableBaseFilledProperly(NetworkConfiguratorTest.java:224) Actual invocation has different arguments: auditLogDirector.log(     AuditLogableImpl:{vmId\u003d\u002700000000-0000-0000-0000-000000000000\u0027, vmName\u003d\u0027null\u0027, userId\u003d\u002700000000-0000-0000-0000-000000000000\u0027, userName\u003d\u0027null\u0027, vdsId\u003d\u0027null\u0027, vdsName\u003d\u0027host name\u0027, vmTemplateId\u003d\u0027null\u0027, vmTemplateName\u003d\u0027null\u0027, clusterId\u003d\u0027null\u0027, clusterName\u003d\u0027null\u0027, storagePoolId\u003d\u0027null\u0027, storagePoolName\u003d\u0027null\u0027, storageDomainId\u003d\u0027null\u0027, storageDomainName\u003d\u0027null\u0027, glusterVolumeName\u003d\u0027null\u0027, glusterVolumeId\u003d\u0027null\u0027, quotaIdForLog\u003d\u0027null\u0027, quotaNameForLog\u003d\u0027null\u0027, quotaEnforcementType\u003d\u0027null\u0027, jobId\u003d\u0027null\u0027, brickId\u003d\u0027null\u0027, brickPath\u003d\u0027null\u0027, reason\u003d\u0027null\u0027, repeatable\u003d\u0027false\u0027, customValues\u003d\u0027[]\u0027, correlationId\u003d\u0027null\u0027, customId\u003d\u0027null\u0027, origin\u003d\u0027oVirt\u0027, customEventId\u003d\u0027-1\u0027, eventFloodInSec\u003d\u00270\u0027, customData\u003d\u0027\u0027, external\u003d\u0027false\u0027, callStack\u003d\u0027null\u0027},     PERSIST_NETWORK_FAILED_FOR_MANAGEMENT_NETWORK,     \"Failed to configure management network: {0}\" ); -\u003e at org.ovirt.engine.core.bll.network.NetworkConfigurator.configureManagementNetwork(NetworkConfigurator.java:247) ",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7760,
+    "numberTestFiles": 1229,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  }
+}
