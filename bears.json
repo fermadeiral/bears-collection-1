@@ -1,0 +1,165 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 230241501,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/230241501",
+      "date": "May 9, 2017 9:41:42 AM"
+    },
+    "fixerBuild": {
+      "id": 230261913,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/230261913",
+      "date": "May 9, 2017 11:09:47 AM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 12:58:36 AM",
+    "reproductionDateEnd": "Dec 16, 2018 1:20:38 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 783781112,
+      "totalMemory": 2235039744
+    },
+    "totalDuration": 1315,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 135,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          135
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 493,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          4,
+          2,
+          0,
+          1,
+          486
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 163,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          163
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/230241501/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 18,
+      "numberDeleted": 5
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/230241501/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4967,
+      "numberPassing": 4964,
+      "numberFailing": 0,
+      "numberErroring": 3,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 3
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.UpdateClusterCommandTest",
+        "numberRunning": 38,
+        "numberPassing": 35,
+        "numberFailing": 0,
+        "numberErroring": 3,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.UpdateClusterCommandTest",
+        "testMethod": "defaultClusterInLocalFs",
+        "failureName": "java.lang.NullPointerException",
+        "detail": "interfaceDao cannot be null",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.UpdateClusterCommandTest",
+        "testMethod": "detachedClusterMovesToDcWithExistingManagementNetwork",
+        "failureName": "java.lang.NullPointerException",
+        "detail": "interfaceDao cannot be null",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.UpdateClusterCommandTest",
+        "testMethod": "clusterAlreadyInLocalFs",
+        "failureName": "java.lang.NullPointerException",
+        "detail": "interfaceDao cannot be null",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7761,
+    "numberTestFiles": 1228,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "3025567d12b233e15c24f10676ad49c7df763b27",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/3025567d12b233e15c24f10676ad49c7df763b27",
+      "date": "May 9, 2017 9:18:28 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "0dd291773a9ec7b3d614b1b2dab9447cf2b5aa3c",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/0dd291773a9ec7b3d614b1b2dab9447cf2b5aa3c",
+      "date": "May 9, 2017 9:25:41 AM"
+    }
+  },
+  "type": "passing_passing"
+}
