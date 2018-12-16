@@ -1,0 +1,354 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 206552342,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/206552342",
+      "date": "Mar 1, 2017 1:52:42 PM"
+    },
+    "fixerBuild": {
+      "id": 206552386,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/206552386",
+      "date": "Mar 1, 2017 1:55:14 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 4:45:15 AM",
+    "reproductionDateEnd": "Dec 16, 2018 5:08:49 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 1906097136,
+      "totalMemory": 2248671232
+    },
+    "totalDuration": 1405,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 138,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          138
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 526,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          2,
+          0,
+          1,
+          518
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 158,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          158
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/206552342/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 8,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 187,
+      "numberDeleted": 169
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/206552342/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4948,
+      "numberPassing": 4921,
+      "numberFailing": 0,
+      "numberErroring": 27,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 27
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest",
+        "numberRunning": 6,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 6,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.StorageDeviceSyncJobTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterSyncJobTest",
+        "numberRunning": 2,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "numberRunning": 8,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 8,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest",
+        "numberRunning": 3,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 3,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest",
+        "numberRunning": 5,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 5,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterSnapshotSyncJobTest",
+        "numberRunning": 2,
+        "numberPassing": 0,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest",
+        "testMethod": "testRefreshStatus",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest",
+        "testMethod": "testRefreshGlusterServicesWithChanges",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest",
+        "testMethod": "syncHooksWhenHookMissingInAllServers",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testUpdateWhenAbortedTasks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "updateTasksInCluster",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.StorageDeviceSyncJobTest",
+        "testMethod": "testRefreshStorageDevices",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest",
+        "testMethod": "syncHooksWhenHookContentConflictInOneServer",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "cleanOrphanTasks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest",
+        "testMethod": "testRefreshGlusterServicesNoChanges",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest",
+        "testMethod": "syncHooksWhenDBInSyncWithServers",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testCreateTasksStartedFromCLI",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest",
+        "testMethod": "syncHooksWhenHookMissingAndContentConflict",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest",
+        "testMethod": "syncHooksWhenNewHooksFound",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testUpdateWhenNoTasks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "cleanOrphanTasksWhenNoVolume",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testCreateTasksStartedFromCLIWithErrors",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest",
+        "testMethod": "syncHooksWhenHookMissingInOneServer",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest",
+        "testMethod": "testDiscoverGeoRepData",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest",
+        "testMethod": "testRefreshStatusNoSessions",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest",
+        "testMethod": "testRefreshGlusterServicesWhenVdsmVerbFails",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest",
+        "testMethod": "testDiscoverGeoRepDataWithConfig",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterSyncJobTest",
+        "testMethod": "testRefreshHeavyWeight",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+        "testMethod": "testUpdateWhenNoCompletedTasks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterSnapshotSyncJobTest",
+        "testMethod": "testSyncSnapshotConfigs",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterSnapshotSyncJobTest",
+        "testMethod": "testSyncSnapshotsList",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest",
+        "testMethod": "testDiscoverGeoRepDataWhenNoSessions",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.GlusterSyncJobTest",
+        "testMethod": "testRefreshLightWeight",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 57,
+    "numberSourceFiles": 7732,
+    "numberTestFiles": 1224,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "c0fe37e2a5fa88a10ea4df14e6d42713f556df54",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/c0fe37e2a5fa88a10ea4df14e6d42713f556df54",
+      "date": "Mar 1, 2017 11:16:10 AM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "e84b7cc6fba33fbd63e5193f749f25b20d53ea73",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/e84b7cc6fba33fbd63e5193f749f25b20d53ea73",
+      "date": "Mar 1, 2017 11:16:10 AM"
+    }
+  },
+  "type": "passing_passing"
+}
