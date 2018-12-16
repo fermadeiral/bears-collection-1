@@ -1,0 +1,646 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 190971338,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/190971338",
+      "date": "Jan 11, 2017 3:57:56 PM"
+    },
+    "fixerBuild": {
+      "id": 190972711,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/190972711",
+      "date": "Jan 11, 2017 4:00:35 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 7:37:37 AM",
+    "reproductionDateEnd": "Dec 16, 2018 7:58:35 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2329178640,
+      "totalMemory": 2799173632
+    },
+    "totalDuration": 1249,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 139,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          139
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 521,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          6,
+          2,
+          0,
+          1,
+          512
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 106,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          106
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/190971338/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 23,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 106,
+      "numberDeleted": 55
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/190971338/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4809,
+      "numberPassing": 4740,
+      "numberFailing": 0,
+      "numberErroring": 69,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 69
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.validator.RunVmValidatorTest",
+        "numberRunning": 20,
+        "numberPassing": 18,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.SnapshotsValidatorTest",
+        "numberRunning": 10,
+        "numberPassing": 4,
+        "numberFailing": 0,
+        "numberErroring": 6,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.MoveOrCopyDiskCommandTest",
+        "numberRunning": 23,
+        "numberPassing": 20,
+        "numberFailing": 0,
+        "numberErroring": 3,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "numberRunning": 23,
+        "numberPassing": 5,
+        "numberFailing": 0,
+        "numberErroring": 18,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.AddVmFromSnapshotCommandTest",
+        "numberRunning": 6,
+        "numberPassing": 5,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "numberRunning": 37,
+        "numberPassing": 27,
+        "numberFailing": 0,
+        "numberErroring": 10,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "numberRunning": 35,
+        "numberPassing": 18,
+        "numberFailing": 0,
+        "numberErroring": 17,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.RestoreAllSnapshotsCommandTest",
+        "numberRunning": 2,
+        "numberPassing": 1,
+        "numberFailing": 0,
+        "numberErroring": 1,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotPlugDiskToVmCommandTest",
+        "numberRunning": 8,
+        "numberPassing": 6,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotUnPlugDiskFromVmCommandTest",
+        "numberRunning": 8,
+        "numberPassing": 6,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.RemoveSnapshotCommandTest",
+        "numberRunning": 9,
+        "numberPassing": 4,
+        "numberFailing": 0,
+        "numberErroring": 5,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AttachDiskToVmCommandTest",
+        "numberRunning": 4,
+        "numberPassing": 2,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "testAddingIDELunExceedsSlotLimit",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateMakeDiskBootableSuccess",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "testExistingQuota",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.validator.RunVmValidatorTest",
+        "testMethod": "failRunStatelessHaVm",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "testUpdateDiskInterfaceUnsupported",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testAllDomainsWithinThreshold",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testAllDomainsHaveSpaceForAllDisksFailure",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testImagesLocked",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "validateSucceedsOnDiskDomainCheckWhenStorageGuidInParamsMatches",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.RemoveSnapshotCommandTest",
+        "testMethod": "testValidateVmDown",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotUnPlugDiskFromVmCommandTest",
+        "testMethod": "validateSuccess",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.RemoveSnapshotCommandTest",
+        "testMethod": "testValidateNotEnoughSpace",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AttachDiskToVmCommandTest",
+        "testMethod": "testValidateSucceedReadOnlyWithInterface",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.validator.RunVmValidatorTest",
+        "testMethod": "failRunStatelessSnapshotInPreview",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testLiveSnapshotWhenNoPluggedDiskSnapshot",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "nullifiedSnapshotOnUpdateDiskToShareable",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateFailedShareableDiskVolumeFormatUnsupported",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateDiscardFailedNotSupportedByDcVersion",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AttachDiskToVmCommandTest",
+        "testMethod": "testValidateSucceed",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.SnapshotsValidatorTest",
+        "testMethod": "vmNotDuringSnapshotReturnsInvalidResultWhenInSnapshot",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateFailedUpdateReadOnly",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "testNonExistingQuota",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.MoveOrCopyDiskCommandTest",
+        "testMethod": "validateVmIsNotDown",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "testAddingPCILunExceedsSlotLimit",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testAllDomainsHaveSpaceForAllDisksSuccess",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.MoveOrCopyDiskCommandTest",
+        "testMethod": "validateEnoughSpace",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testAllDomainsHaveSpaceForNewDisksFailure",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testVmDuringSnaoshot",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateFailedROVmAttachedToPool",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testSaveMemoryPciPassthroughFailure",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "testIscsiLunCanBeAddedIfScsiPassthroughEnabledAndScsiReservationEnabled",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.MoveOrCopyDiskCommandTest",
+        "testMethod": "validateVmInPreview",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "testLunDiskWithSgioCanBeAdded",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateDiscardSucceeded",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.SnapshotsValidatorTest",
+        "testMethod": "vmNotDuringSnapshotReturnsValidForNoSnapshotInProgress",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testPositiveValidateWithNoDisks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.RestoreAllSnapshotsCommandTest",
+        "testMethod": "validateFailsOnSnapshotTypeRegularNotInPreview",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "testLunDiskValid",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.RemoveSnapshotCommandTest",
+        "testMethod": "testValidateEnoughSpace",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.SnapshotsValidatorTest",
+        "testMethod": "snapshotExistsByGuidReturnsInvalidResultWhenNoSnapshot",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateUpdateWipeAfterDeleteVmDown",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotPlugDiskToVmCommandTest",
+        "testMethod": "validateFailedDiscardNotSupported",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateFailedShareableDiskOnGlusterDomain",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.SnapshotsValidatorTest",
+        "testMethod": "vmNotInPreviewReturnsValidForNoSnapshotInProgress",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "testIscsiLunCannotBeAddedIfSgioIsFilteredAndScsiReservationEnabled",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testVmInPreview",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotPlugDiskToVmCommandTest",
+        "testMethod": "validateSuccess",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateFailedWipeVmAttachedToPool",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateDiscardFailedNotSupportedByDiskInterface",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testVmDuringMigration",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.SnapshotsValidatorTest",
+        "testMethod": "snapshotExistsByGuidReturnsValidResultWhenSnapshotExists",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateUpdateWipeAfterDeleteVmUp",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateUpdateDescriptionVmUp",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.RemoveSnapshotCommandTest",
+        "testMethod": "testValidateVmUpHostCapable",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.SnapshotsValidatorTest",
+        "testMethod": "vmNotInPreviewReturnsInvalidResultWhenInSnapshot",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "validateSucceedsOnDiskDomainCheckWhenEmptyStorageGuidInParams",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testAllDomainsExistAndActive",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.RemoveSnapshotCommandTest",
+        "testMethod": "testValidateVmMigrating",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testVmRunningStateless",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.HotUnPlugDiskFromVmCommandTest",
+        "testMethod": "validateFailedDiscardNotSupported",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testNoMemoryPciPassthroughSuccess",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testImagesExceededNumberOfVolumesInChain",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testAllDomainsHaveSpaceForNewDisksSuccess",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testPositiveValidateWithDisks",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "validateSucceedsOnDiskDomainCheckWhenStorageGuidInParamsMismatches",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.AddVmFromSnapshotCommandTest",
+        "testMethod": "canAddCloneVmFromSnapshotNoConfiguration",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.snapshots.CreateAllSnapshotsFromVmCommandTest",
+        "testMethod": "testImagesIllegal",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.AddDiskCommandTest",
+        "testMethod": "testExistingQuota",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.storage.disk.UpdateVmDiskCommandTest",
+        "testMethod": "validateUpdateDescriptionVmDown",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 56,
+    "numberSourceFiles": 7684,
+    "numberTestFiles": 1215,
+    "numberLibrariesFailingModule": 187,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "1b20ce3aa4dd0a898f920e802c8cf2560f7a5e45",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/1b20ce3aa4dd0a898f920e802c8cf2560f7a5e45",
+      "date": "Jan 11, 2017 3:29:59 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "64741ba8afebb615f4df933ebf93683060bf0d9e",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/64741ba8afebb615f4df933ebf93683060bf0d9e",
+      "date": "Jan 11, 2017 3:34:17 PM"
+    }
+  },
+  "type": "passing_passing"
+}
