@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 188863777,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/188863777",
+      "date": "Jan 4, 2017 4:03:30 PM"
+    },
+    "fixerBuild": {
+      "id": 188876237,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/188876237",
+      "date": "Jan 4, 2017 4:24:00 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 8:03:25 AM",
+    "reproductionDateEnd": "Dec 16, 2018 8:26:47 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 758164800,
+      "totalMemory": 2178940928
+    },
+    "totalDuration": 1393,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 132,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          132
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 535,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          2,
+          0,
+          1,
+          527
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 194,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          194
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/188863777/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 0,
+      "numberDeleted": 4
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/188863777/backend/manager/modules/restapi/types",
+    "overallMetrics": {
+      "numberRunning": 5038,
+      "numberPassing": 5037,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.api.restapi.types.DiskMapperTest",
+        "numberRunning": 3,
+        "numberPassing": 2,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.api.restapi.types.DiskMapperTest",
+        "testMethod": "testInitialSize",
+        "failureName": "java.lang.AssertionError",
+        "detail": "ActualSizeInBytes doesn\u0027t match the initial size as expected expected:\u003c54321\u003e but was:\u003c0\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 56,
+    "numberSourceFiles": 7661,
+    "numberTestFiles": 1211,
+    "numberLibrariesFailingModule": 157,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "d00a75a72946c1cd0fcf3a56b6e4cc7e104e1847",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/d00a75a72946c1cd0fcf3a56b6e4cc7e104e1847",
+      "date": "Jan 4, 2017 3:21:46 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "4b3be3cac4cca5c1635c08be441a2c1f416d67ff",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/4b3be3cac4cca5c1635c08be441a2c1f416d67ff",
+      "date": "Jan 4, 2017 3:23:03 PM"
+    }
+  },
+  "type": "passing_passing"
+}
