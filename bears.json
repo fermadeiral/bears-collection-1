@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 190964974,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/190964974",
+      "date": "Jan 11, 2017 3:35:36 PM"
+    },
+    "fixerBuild": {
+      "id": 190971338,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/190971338",
+      "date": "Jan 11, 2017 3:57:56 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 7:37:37 AM",
+    "reproductionDateEnd": "Dec 16, 2018 7:57:39 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 933693112,
+      "totalMemory": 2220359680
+    },
+    "totalDuration": 1195,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 138,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          138
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 521,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          7,
+          2,
+          0,
+          1,
+          511
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 58,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          58
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/190964974/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 4,
+      "numberDeleted": 25
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/190964974/backend/manager/modules/vdsbroker",
+    "overallMetrics": {
+      "numberRunning": 1758,
+      "numberPassing": 1757,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 3,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.irsbroker.ImagesListReturnTest",
+        "numberRunning": 1,
+        "numberPassing": 0,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.vdsbroker.irsbroker.ImagesListReturnTest",
+        "testMethod": "validateBadUUIDSFiltered",
+        "failureName": "java.lang.AssertionError",
+        "detail": "array lengths differed, expected.length\u003d2 actual.length\u003d3",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 56,
+    "numberSourceFiles": 7684,
+    "numberTestFiles": 1215,
+    "numberLibrariesFailingModule": 164,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "bb8404df9475dd45b358677676aac9ce5f40dbe9",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/bb8404df9475dd45b358677676aac9ce5f40dbe9",
+      "date": "Jan 11, 2017 3:11:40 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "1b20ce3aa4dd0a898f920e802c8cf2560f7a5e45",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/1b20ce3aa4dd0a898f920e802c8cf2560f7a5e45",
+      "date": "Jan 11, 2017 3:29:59 PM"
+    }
+  },
+  "type": "passing_passing"
+}
