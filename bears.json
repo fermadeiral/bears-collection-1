@@ -1,0 +1,251 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 220079224,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/220079224",
+      "date": "Apr 8, 2017 8:27:19 PM"
+    },
+    "fixerBuild": {
+      "id": 220090576,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/220090576",
+      "date": "Apr 8, 2017 9:28:45 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 2:14:59 AM",
+    "reproductionDateEnd": "Dec 16, 2018 2:36:26 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2448955184,
+      "totalMemory": 3036151808
+    },
+    "totalDuration": 1278,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 137,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          137
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 490,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          7,
+          2,
+          0,
+          1,
+          480
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 160,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          160
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/220079224/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 14,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 57,
+      "numberDeleted": 58
+    }
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "89287be8dd99be2f5fbe3b2ecc62cbc41a9ac112",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/89287be8dd99be2f5fbe3b2ecc62cbc41a9ac112",
+      "date": "Apr 8, 2017 6:41:14 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "18a64cc19d33d3c89402a61878265bd7c9c4bdec",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/18a64cc19d33d3c89402a61878265bd7c9c4bdec",
+      "date": "Apr 8, 2017 6:41:14 PM"
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/220079224/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4985,
+      "numberPassing": 4972,
+      "numberFailing": 7,
+      "numberErroring": 6,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true,
+          "occurrences": 6
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 7
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.EnableGlusterHookCommandTest",
+        "numberRunning": 5,
+        "numberPassing": 3,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.RemoveVdsCommandTest",
+        "numberRunning": 7,
+        "numberPassing": 5,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.DisableGlusterHookCommandTest",
+        "numberRunning": 5,
+        "numberPassing": 3,
+        "numberFailing": 0,
+        "numberErroring": 2,
+        "numberSkipping": 0
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.hostdeploy.AddVdsCommandTest",
+        "numberRunning": 9,
+        "numberPassing": 2,
+        "numberFailing": 7,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.hostdeploy.AddVdsCommandTest",
+        "testMethod": "validateSucceedsWhenGlusterServerHasNoPeers",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.hostdeploy.AddVdsCommandTest",
+        "testMethod": "validateSucceedsWhenGlusterServerHasPeersThatExistInDB",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.hostdeploy.AddVdsCommandTest",
+        "testMethod": "validateSucceedsWhenHasPeersThrowsException",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.DisableGlusterHookCommandTest",
+        "testMethod": "executeCommand",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.DisableGlusterHookCommandTest",
+        "testMethod": "executeCommandWhenFailed",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.RemoveVdsCommandTest",
+        "testMethod": "removeWhenMultipleHosts",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.hostdeploy.AddVdsCommandTest",
+        "testMethod": "validateSucceedsOnEmptyClusterEvenWhenGlusterServerHasPeers",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.EnableGlusterHookCommandTest",
+        "testMethod": "executeCommandWhenFailed",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.gluster.EnableGlusterHookCommandTest",
+        "testMethod": "executeCommand",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.RemoveVdsCommandTest",
+        "testMethod": "removeLastHost",
+        "failureName": "java.lang.NullPointerException",
+        "isError": true
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.hostdeploy.AddVdsCommandTest",
+        "testMethod": "validateSuccessForGlusterServerWhenUpServerExists",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.hostdeploy.AddVdsCommandTest",
+        "testMethod": "validateFailsForGlusterServerWhenNoUpServer",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      },
+      {
+        "testClass": "org.ovirt.engine.core.bll.hostdeploy.AddVdsCommandTest",
+        "testMethod": "validateFailsWhenGlusterServerHasPeers",
+        "failureName": "java.lang.AssertionError",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 60,
+    "numberSourceFiles": 7755,
+    "numberTestFiles": 1228,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "type": "passing_passing"
+}
