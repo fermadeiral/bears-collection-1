@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 216366264,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/216366264",
+      "date": "Mar 29, 2017 4:36:22 PM"
+    },
+    "fixerBuild": {
+      "id": 216366905,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/216366905",
+      "date": "Mar 29, 2017 4:39:07 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 2:37:15 AM",
+    "reproductionDateEnd": "Dec 16, 2018 2:59:12 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2062923552,
+      "totalMemory": 2726297600
+    },
+    "totalDuration": 1308,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 143,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          143
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 478,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          2,
+          0,
+          1,
+          470
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 159,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          159
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/216366264/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 1,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 3,
+      "numberDeleted": 3
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/216366264/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4983,
+      "numberPassing": 4982,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.UpdateClusterCommandTest",
+        "numberRunning": 39,
+        "numberPassing": 38,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.UpdateClusterCommandTest",
+        "testMethod": "memoryOptimizationLowerThenZeroWithoutKsmOrBallooning",
+        "failureName": "java.lang.AssertionError",
+        "detail": " Expected: is \u003ctrue\u003e      but: was \u003cfalse\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 58,
+    "numberSourceFiles": 7746,
+    "numberTestFiles": 1228,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "ac1573c2e2093ca3e3532f3d90d8060f9c3f329a",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/ac1573c2e2093ca3e3532f3d90d8060f9c3f329a",
+      "date": "Mar 29, 2017 4:10:30 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "119f019c64f4ccb20de516aab3e331278796569a",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/119f019c64f4ccb20de516aab3e331278796569a",
+      "date": "Mar 29, 2017 4:12:10 PM"
+    }
+  },
+  "type": "passing_passing"
+}
