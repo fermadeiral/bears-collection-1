@@ -1,0 +1,151 @@
+{
+  "version": "Bears 1.0",
+  "repository": {
+    "name": "oVirt/ovirt-engine",
+    "githubId": 6403019,
+    "url": "https://github.com/oVirt/ovirt-engine",
+    "isFork": false,
+    "original": {
+      "name": "",
+      "githubId": 0,
+      "url": ""
+    },
+    "isPullRequest": false,
+    "pullRequestId": 0
+  },
+  "builds": {
+    "buggyBuild": {
+      "id": 204245521,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/204245521",
+      "date": "Feb 22, 2017 5:29:32 PM"
+    },
+    "fixerBuild": {
+      "id": 204268519,
+      "url": "http://travis-ci.org/oVirt/ovirt-engine/builds/204268519",
+      "date": "Feb 22, 2017 6:19:04 PM"
+    }
+  },
+  "reproductionBuggyBuild": {
+    "reproductionDateBeginning": "Dec 16, 2018 5:48:04 AM",
+    "reproductionDateEnd": "Dec 16, 2018 6:11:25 AM",
+    "machineInfo": {
+      "hostName": "spirals-bears",
+      "numberCPU": 16,
+      "freeMemory": 2097021320,
+      "totalMemory": 2692218880
+    },
+    "totalDuration": 1393,
+    "processDurations": {
+      "cloning": {
+        "nbSteps": 1,
+        "totalDuration": 137,
+        "stepNames": [
+          "CloneRepository"
+        ],
+        "stepDurations": [
+          137
+        ]
+      },
+      "building": {
+        "nbSteps": 5,
+        "totalDuration": 521,
+        "stepNames": [
+          "CheckoutPatchedBuildCandidate",
+          "ComputeSourceDir",
+          "ComputeTestDir",
+          "CheckoutBuggyBuildCandidateSourceCode",
+          "BuildProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          5,
+          3,
+          0,
+          1,
+          512
+        ]
+      },
+      "testing": {
+        "nbSteps": 1,
+        "totalDuration": 158,
+        "stepNames": [
+          "TestProjectBuggyBuildCandidateSourceCode"
+        ],
+        "stepDurations": [
+          158
+        ]
+      }
+    },
+    "projectRootPomPath": "./workspace/oVirt/ovirt-engine/204245521/pom.xml"
+  },
+  "patchDiff": {
+    "files": {
+      "numberAdded": 0,
+      "numberChanged": 3,
+      "numberDeleted": 0
+    },
+    "lines": {
+      "numberAdded": 13,
+      "numberDeleted": 1
+    }
+  },
+  "tests": {
+    "failingModule": "/root/workspace/oVirt/ovirt-engine/204245521/backend/manager/modules/bll",
+    "overallMetrics": {
+      "numberRunning": 4911,
+      "numberPassing": 4910,
+      "numberFailing": 1,
+      "numberErroring": 0,
+      "numberSkipping": 5,
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false,
+          "occurrences": 1
+        }
+      ]
+    },
+    "failingClasses": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.validator.HostValidatorTest",
+        "numberRunning": 39,
+        "numberPassing": 38,
+        "numberFailing": 1,
+        "numberErroring": 0,
+        "numberSkipping": 0
+      }
+    ],
+    "failureDetails": [
+      {
+        "testClass": "org.ovirt.engine.core.bll.validator.HostValidatorTest",
+        "testMethod": "supportsHostedEngineDeployInVersion36",
+        "failureName": "java.lang.AssertionError",
+        "detail": " Expected: valid ValidationResult      but: was \u003cValidationResult:{messages\u003d\u0027[ACTION_TYPE_FAILED_HOSTED_ENGINE_DEPLOYMENT_UNSUPPORTED]\u0027, variableReplacements\u003d\u0027[$deployAction deploy, $clusterLevel 3.6]\u0027}\u003e",
+        "isError": false
+      }
+    ]
+  },
+  "projectMetrics": {
+    "numberModules": 57,
+    "numberSourceFiles": 7722,
+    "numberTestFiles": 1222,
+    "numberLibrariesFailingModule": 191,
+    "numberLines": 0
+  },
+  "commits": {
+    "buggyBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "4a4c712fa2536e79723f0a1be64500747c5c4dfb",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/4a4c712fa2536e79723f0a1be64500747c5c4dfb",
+      "date": "Feb 22, 2017 4:54:19 PM"
+    },
+    "fixerBuild": {
+      "repoName": "oVirt/ovirt-engine",
+      "branchName": "master",
+      "sha": "a09e01e5a0cf3cefabc224e696215fa4642763a2",
+      "url": "http://github.com/oVirt/ovirt-engine/commit/a09e01e5a0cf3cefabc224e696215fa4642763a2",
+      "date": "Feb 22, 2017 5:29:38 PM"
+    }
+  },
+  "type": "passing_passing"
+}
